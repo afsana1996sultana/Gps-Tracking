@@ -29,7 +29,6 @@
 									<th class="sorting sorting_asc">SN</th>
 									<th class="sorting">Name</th>
 									<th class="sorting">Email</th>
-									<th class="sorting">Role Id</th>
 									<th class="sorting">Action</th>
 									</tr>
 								</thead>
@@ -39,9 +38,9 @@
 										<td>{{$users-> id}}</td>
 										<td>{{$users-> name}}</td>
 										<td>{{$users-> email}}</td>
-										<td>{{$users-> role_id}}</td>
 										<td class="text-right py-0 align-middle">
 											<div class="btn-group btn-group-sm">
+												<button type="button" value="{{$users->id}}" class="btn btn-info" id="usersshBtn" ><i class="fas fa-eye" ></i> </button>&nbsp;
 												<button type="button" value="{{$users->id}}" class="btn btn-primary" id="editusers" ><i class="fas fa-edit" ></i> </button>&nbsp;
 												<button type="button" value="{{$users->id}}" class="btn btn-danger" id="usersDbtn" ><i class="fas fa-trash"></i> </button>
 											</div>
@@ -106,21 +105,10 @@
 								</div>
 							</div>
 						</div>
-
-                        <div class="col-sm-12">
-							<div class="input-group mb-5">
-								<div class="col-sm-3">
-									<label class="col-form-label">Role Id:&nbsp;</label>
-								</div>
-								<div class="col-sm-9">
-									<input type="text" class="form-control" id="txtRoleId" name="txtRoleId">
-								</div>
-							</div>
-						</div>
 					</div>
 
 					<div class="submit-section float-right">
-                        <button type="button" class="btn btn-secondary" style="width:80px;" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-info" style="width:80px;" data-dismiss="modal">Close</button>
 						<input class="btn btn-primary submit-btn" type="submit" name="btnCreate" style="width:80px;" value="Add">
 					</div>
 				</form>
@@ -160,14 +148,6 @@
 						<div class="form-group mb-5">
 							<label class="col-form-label">Password:&nbsp;</label>
 							<div type="password" id="ShPassword"></div>
-						</div>
-					</div>
-
-
-					<div class="col-sm-6">
-						<div class="form-group mb-5">
-							<label class="col-form-label">Role Id:&nbsp;</label>
-							<div class="" id="ShRoleId"></div>
 						</div>
 					</div>
 				</div>
@@ -225,21 +205,10 @@
 								</div>
 							</div>
 						</div>
-
-                        <div class="col-sm-12">
-							<div class="input-group mb-5">
-								<div class="col-sm-3">
-									<label class="col-form-label">Role Id:&nbsp;</label>
-								</div>
-								<div class="col-sm-9">
-									<input type="text" class="form-control" id="eRoleId" name="txtRoleId">
-								</div>
-							</div>
-						</div>
 					</div>
 
 						<div class="submit-section float-right">
-							<button type="button" class="btn btn-secondary" style="width:80px;" data-dismiss="modal">Cancle</button>
+							<button type="button" class="btn btn-info" style="width:80px;" data-dismiss="modal">Cancle</button>
 							<input class="btn btn-primary submit-btn" type="submit"  name="btnUpdate" value="Update">
 						</div>
 				</form>
@@ -333,7 +302,6 @@
 					$('#ShName').html(response.users.name);
 					$('#ShEmail').html(response.users.email);
 					$('#ShPassword').html(response.users.password);
-					$('#ShRoleId').html(response.users.role_id);
 
 				}
 			});

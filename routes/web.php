@@ -39,6 +39,7 @@ Auth::routes();
 Route::group(['middleware' =>  'auth'], function() {
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
+
 ////////////////////User/////////////////////////
 Route::resource('users', UserController::class);
 Route::get('edit-users/{id}',[UserController::class,'edit' ]);

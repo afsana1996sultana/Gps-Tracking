@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admins;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -20,12 +19,8 @@ class UserController extends Controller
         $users=new User; 
         $users->name=$request->txtName;
         $users->email=$request->txtEmail;
-        $users->role_id=$request->txtRoleId;
-        // $users->email_verified_at=$request->txtEmailVerifiedAt;
         $users->password=Hash::make($request->txtPassword);
         
-
-        $users->deleted_at=$request->txtDeleted_at;
         $users->save();     
         return back()->with('success','Created Successfully.');
           
@@ -55,15 +50,13 @@ class UserController extends Controller
         //$users->id=$request->cmbUserId;
         $users->name=$request->txtName;
         $users->email=$request->txtEmail;
-        $users->role_id=$request->txtRoleId;
-        // $users->email_verified_at=$request->txtEmailVerifiedAt;
         $users->password=Hash::make($request->txtPassword);
 
-        $users->deleted_at=$request->txtDeleted_at;
         $users->update();
         return redirect()->back()
         ->with('success',' Updated successfully');   
     }
+
 
     public function destroy(Request $request){  
         $usersid=$request->input('d_users');

@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Fashion World</title>
+  <title>SeeMove Ltd</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="{{asset('style.css')}}">
 
@@ -13,7 +13,7 @@
 	<div id="login-box">
 		<div class="logo">
 			<img src="" class="img img-responsive img-circle center-block"/>
-			<h1 class="logo-caption"><span class="tweak">Fashion</span>House</h1>
+			<h1 class="logo-caption"><span class="tweak">SeeMove</span>Gps</h1>
 		</div><!-- /.logo -->
         <form method="POST" action="{{ route('login') }}">
           @csrf

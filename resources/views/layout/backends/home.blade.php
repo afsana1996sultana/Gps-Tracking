@@ -5,10 +5,13 @@
 <!-- Mirrored from demo.getstisla.com/index-0.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 May 2022 07:14:01 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
-  <!-- <link rel="shortcut icon" type="image/x-icon" href="{{url('backends/assets/img/avatar/E-comIcon.webp')}}" /> -->
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Fashion World</title>
+  <title>SeeMove Ltd</title>
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="{{url('backends/assets/image/seemove_icon.png')}}" type="image/x-icon">
+  <link rel="icon" href="{{url('backends/assets/image/seemove_icon.png')}}" type="image/x-icon">
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{url('backends/assets/modules/bootstrap/css/bootstrap.min.css')}}">
@@ -53,11 +56,6 @@
   <script src="{{url('backends/assets/modules/nicescroll/jquery.nicescroll.min.js')}}"></script>
   <script src="{{url('backends/assets/modules/moment.min.js')}}"></script>
   <script src="{{url('backends/assets/js/stisla.js')}}"></script>
-
-  
-  <!-- JS Libraies -->
-
-  <!-- Page Specific JS File -->
   
   <!-- Template JS File -->
   <script src="{{url('backends/assets/js/scripts.js')}}"></script>
