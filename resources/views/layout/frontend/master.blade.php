@@ -11,7 +11,7 @@
         <!-- Favicons -->
         <link rel="shortcut icon" href="{{url('frontend/image/clssicit2.png')}}" type="image/x-icon">
         <link rel="icon" href="{{url('frontend/image/clssicit2.png')}}" type="image/x-icon">
-
+vgdhgdshfc
         <!-- Stylesheets -->
         <link rel="stylesheet" href="{{url('frontend/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{url('frontend/css/style.min.css')}}">
