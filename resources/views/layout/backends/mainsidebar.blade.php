@@ -9,6 +9,15 @@
       <li class=""><a class="nav-link" href="{{url('/users')}}"><i class="fas fa-user"></i><span>Users</span></a></li>
 
 
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link has-dropdown"><i class="fas fa-cog"></i><span>Settings</span></a>
+        <ul class="dropdown-menu">
+          <li class=""><a class="nav-link" href="{{url('/menu')}}">Menu</a></li>
+          <li class=""><a class="nav-link" href="{{url('/sub-menu')}}">Submenu</a></li>
+          <li class=""><a class="nav-link" href="{{url('/status')}}">Status</a></li>
+        </ul>
+      </li>
+
       <li class="nav-item dropdown ">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>Blogs</span></a>
         <ul class="dropdown-menu">

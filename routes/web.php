@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admins\UserController;
+use App\Http\Controllers\Admins\StatusController;
+use App\Http\Controllers\Admins\MenuController;
+use App\Http\Controllers\Admins\SubmenuController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -38,6 +41,29 @@ Auth::routes();
 
 Route::group(['middleware' =>  'auth'], function() {
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+
+
+
+//////////////////////Menu/////////////////////////////////
+Route::resource('menu', App\Http\Controllers\Admins\MenuController::class);
+Route::get('edit-menu/{id}', [MenuController::class, 'edit']);
+Route::put('menu-update', [MenuController::class, 'update']);
+Route::delete('delete-menu', [MenuController::class, 'destroy']);
+
+
+
+//////////////////////Sub-Menu/////////////////////////////////
+Route::resource('sub-menu', App\Http\Controllers\Admins\SubmenuController::class);
+Route::get('edit-sub-menu/{id}', [SubmenuController::class, 'edit']);
+Route::put('sub-menu-update', [SubmenuController::class, 'update']);
+Route::delete('delete-sub-menu', [SubmenuController::class, 'destroy']);
+
+
+//////////////////////Status/////////////////////////////////
+Route::resource('status', App\Http\Controllers\Admins\StatusController::class);
+Route::get('edit-status/{id}', [StatusController::class, 'edit']);
+Route::put('status-update', [StatusController::class, 'update']);
+Route::delete('delete-status', [StatusController::class, 'destroy']);
 
 
 ////////////////////User/////////////////////////
