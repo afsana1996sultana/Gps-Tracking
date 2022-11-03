@@ -18,6 +18,18 @@
         </ul>
       </li>
 
+
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link has-dropdown"><i class="fas fa-cog"></i><span>Manage Website</span></a>
+        <ul class="dropdown-menu">
+          <li class=""><a class="nav-link" href="{{url('header/1/edit')}}">Header</a></li>
+          <li class=""><a class="nav-link" href="{{url('footer/1/edit')}}">Footer</a></li>
+          <li class=""><a class="nav-link" href="{{url('/quick-link')}}">Quicklink</a></li>
+          <li class=""><a class="nav-link" href="{{url('/social-link')}}">Sociallink</a></li>
+        </ul>
+      </li>
+
+
       <li class="nav-item dropdown ">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>Blogs</span></a>
         <ul class="dropdown-menu">

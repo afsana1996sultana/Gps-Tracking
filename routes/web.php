@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admins\UserController;
 use App\Http\Controllers\Admins\StatusController;
+use App\Http\Controllers\Admins\QuicklinkController;
+use App\Http\Controllers\Admins\SociallinkController;
 use App\Http\Controllers\Admins\MenuController;
 use App\Http\Controllers\Admins\SubmenuController;
 use Illuminate\Support\Facades\Auth;
@@ -57,6 +59,28 @@ Route::resource('sub-menu', App\Http\Controllers\Admins\SubmenuController::class
 Route::get('edit-sub-menu/{id}', [SubmenuController::class, 'edit']);
 Route::put('sub-menu-update', [SubmenuController::class, 'update']);
 Route::delete('delete-sub-menu', [SubmenuController::class, 'destroy']);
+
+
+////////////////////Header/////////////////////////////////
+Route::resource('header', App\Http\Controllers\Admins\HeaderController::class);
+
+
+////////////////////Footer/////////////////////////////////
+Route::resource('footer', App\Http\Controllers\Admins\FooterController::class);
+
+
+//////////////////////Quicklink/////////////////////////////////
+Route::resource('quick-link', App\Http\Controllers\Admins\QuicklinkController::class);
+Route::get('edit-quick-link/{id}', [QuicklinkController::class, 'edit']);
+Route::put('quick-link-update', [QuicklinkController::class, 'update']);
+Route::delete('delete-quick-link', [QuicklinkController::class, 'destroy']);
+
+
+//////////////////////Sociallink/////////////////////////////////
+Route::resource('social-link', App\Http\Controllers\Admins\SociallinkController::class);
+Route::get('edit-social-link/{id}', [SociallinkController::class, 'edit']);
+Route::put('social-link-update', [SociallinkController::class, 'update']);
+Route::delete('delete-social-link', [SociallinkController::class, 'destroy']);
 
 
 //////////////////////Status/////////////////////////////////

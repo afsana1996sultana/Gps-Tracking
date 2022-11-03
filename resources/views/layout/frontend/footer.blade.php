@@ -1,44 +1,45 @@
-<div class="counter-area section-padding-lg bg-grey">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title">
-                    <h4>Our Telecommunications Partners</h4>
-                </div>
-            </div>
-        </div>
+<style>
+.footer_contact_section {
+    background: #f1f1f1;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+</style>
 
-        <div class="counter-area-inner counter-style-2">
-            <div class="row no-gutters align-items-center">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
-                    <div class="counter text-center">
-                        <img src="{{url('frontend/image/g1.jpeg')}}" class="rounded" alt="SeeMove" width="304" height="236"> 
+
+<footer id="footer" class="footer-area"> 
+    <div class="footer_top_seciton">
+        <div class="footer_contact_section">
+            <div class="container-fluid">
+                <div class="row"> 
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="partner_logo">
+                            <img src="{{url('frontend/image/airtel.png')}}" alt="SeeMove">
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
-                    <div class="counter text-center">
-                        <img src="{{url('frontend/image/g2.jpeg')}}" class="rounded" alt="SeeMove" width="304" height="236"> 
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="partner_logo">
+                            <img src="{{url('frontend/image/banglalink.png')}}" alt="SeeMove">
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
-                    <div class="counter text-center">
-                        <img src="{{url('frontend/image/g3.jpeg')}}" class="rounded" alt="SeeMove" width="304" height="236"> 
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="partner_logo">
+                            <img src="{{url('frontend/image/grameenphone.png')}}" alt="SeeMove">
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
-                    <div class="counter text-center">
-                        <img src="{{url('frontend/image/g4.jpeg')}}" class="rounded" alt="SeeMove" width="304" height="236"> 
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="partner_logo">
+                            <img src="{{url('frontend/image/teletalk.png')}}" alt="SeeMove">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<footer id="footer" class="footer-area">  
     <div class="footer-top-area footer_top_area_bg_img" style="background-image: url('frontend/image/footer-1.webp');">
         <div class="footer_area_bg_overlay">
             <div class="container-fluid">
@@ -65,6 +66,7 @@
                             </ul>
                         </div>
                     </div>
+
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div class="single-widget widget-latest-blog">
                                     <h5 class="footer-widget-title">QUICK LINK</h5>
@@ -86,12 +88,14 @@
                             </li>
                         </div>
                     </div>
+
                     <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12">
                         <div class="single-widget widget-quick-links">
                             <h5 class="footer-widget-title">Find ME</h5>
                         <img src="{{url('frontend/image/images.jpg')}}" class="responsive" alt="SeeMove" width="304" height="236"> 
                         </div>
                     </div>
+
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                         <div class="single-widget footer-widget-about">
                             <h5 class="footer-widget-title">Get Touch in</h5>
@@ -109,11 +113,11 @@
                         </div>
                         <div class="single-widget widget-newsletter">
                             <form method="POST" action="#" accept-charset="UTF-8" id="newsletterForm" class="newsletter-widget-form">
-                            <input name="_token" type="hidden">
-                            <input name="email" type="email" placeholder="Your Email Address">
-                            <button type="submit" class="cr-btn" id="newsletterFormSubmit">
-                                <span>Subscribe</span>
-                            </button>
+                                <input name="_token" type="hidden">
+                                <input name="email" type="email" placeholder="Your Email Address">
+                                <button type="submit" class="cr-btn" id="newsletterFormSubmit">
+                                    <span>Subscribe</span>
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -122,31 +126,6 @@
             </div>
         </div>
     </div>
-    <!-- <div class="footer_menu_section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                <div class="footer_menu_items">
-                    <a href="#" class="btn btn-sm loginFromOpenBtn">
-                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                    </a>
-                    <a href="mailto:info@seemove.com.bd" class="btn btn-sm">
-                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                    </a>
-                    <a href="index.html" class="btn btn-sm">
-                        <img href="#" src="{{url('frontend/image/logo.jpg')}}">
-                    </a>
-                    <a href="tel:+880  01622233333" class="btn btn-sm">
-                        <i class="fa fa-phone-square" aria-hidden="true"></i>
-                    </a>
-                    <a href="demo_request.html" class="btn btn-sm">
-                        <i class="fa fa-registered" aria-hidden="true"></i>
-                    </a>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 </footer>         
 
       

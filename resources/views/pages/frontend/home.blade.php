@@ -332,7 +332,7 @@
                                         <div class="item">
                                             <div class="testimonial_section_item">
                                                 <div class="testimonial_img">
-                                                    <img src="{{url('frontend/image/classic-it-zara-mart.jpg')}}" alt="SeeMove">
+                                                    <img src="{{url('frontend/image/classic-it-estore.jpg')}}" alt="SeeMove">
                                                 </div>
                                                 <p>WOOD TECH</p>
                                                 <h4>GPS Fleet Tracker</h4>
@@ -358,7 +358,7 @@
                                         <div class="item">
                                             <div class="testimonial_section_item">
                                                 <div class="testimonial_img">
-                                                <img src="{{url('frontend/image/classic-it-zara-mart.jpg')}}" alt="SeeMove">
+                                                <img src="{{url('frontend/image/classic-it-estore.jpg')}}" alt="SeeMove">
                                                 </div>
                                                 <p>NS TEXTILE</p>
                                                 <h4>GPS Fleet Tracker</h4>
@@ -535,9 +535,6 @@
         </div>
     </div>
 </main>
-<!-- Main Content End-->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js" integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 @endsection
