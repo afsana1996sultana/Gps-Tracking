@@ -56,5 +56,38 @@
     <script src="{{url('frontend/js/sm-validation.js')}}"></script>
     <script src="{{url('frontend/js/main.js')}}"></script>
     <!-- <script src="{{url('frontend/js/doodle_digital1.js')}}"></script> -->
+
+    <!-- Class Change Script -->
+    <script>
+        $('#menu_ctrl').on('click', function(){
+            var x = ($('#menu_container').attr('class')).trim().toString();
+            var ifExist = x.indexOf('opened');
+            if(ifExist == -1){
+                $('#menu_container').addClass('opened');
+            }else{
+                $('#menu_container').removeClass('opened');
+                $('#menu_container').removeClass('submenu-opened');
+                $('#About').removeClass('opened').removeClass('current');
+            }
+        });
+
+        $('#btn_sub').on('click', function(){
+            var menu_cons_class_chk = ($('#menu_container').attr('class')).trim().toString();
+            var ifExist = menu_cons_class_chk.indexOf('submenu-opened');
+            console.log(ifExist);
+            if(ifExist == -1){
+                $('#menu_container').addClass('submenu-opened');
+                $('#About').addClass('opened').addClass('current');
+            }else{
+                $('#menu_container').removeClass('submenu-opened');
+                $('#About').removeClass('opened').removeClass('current');
+            }
+        });
+
+        // $('#data-submenu-close').on('click', function(){
+        //     $('#menu_container').removeClass('submenu-opened');
+        //     $('#About').removeClass('opened').removeClass('current');
+        // });
+    </script>
 </body>
 </html>

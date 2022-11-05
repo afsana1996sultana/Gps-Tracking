@@ -3,11 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admins\UserController;
+use App\Http\Controllers\Admins\NewsletterController;
 use App\Http\Controllers\Admins\StatusController;
 use App\Http\Controllers\Admins\QuicklinkController;
 use App\Http\Controllers\Admins\SociallinkController;
 use App\Http\Controllers\Admins\MenuController;
 use App\Http\Controllers\Admins\SubmenuController;
+use App\Http\Controllers\Admins\TelepartnerController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -31,6 +33,8 @@ Route::get('/', [App\Http\Controllers\FrontendController::class, 'home'])->name(
 Route::get('home', [App\Http\Controllers\FrontendController::class, 'home'])->name('home');
 
 
+////////////////////Newsletter-Post/////////////////////////
+Route::post('newsletter_store',[NewsletterController::class,'store' ])->name('newsletter_store');
 
 
 Route::get('admin', function(){
@@ -44,6 +48,12 @@ Auth::routes();
 Route::group(['middleware' =>  'auth'], function() {
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
+
+
+////////////////////Newsletter/////////////////////////
+Route::resource('newsletter', App\Http\Controllers\Admins\NewsletterController::class);
+Route::get('show-newsletter/{id}',[NewsletterController::class,'show' ]);
+Route::delete('delete-newsletter',[NewsletterController::class,'destroy' ]);
 
 
 //////////////////////Menu/////////////////////////////////
@@ -81,6 +91,14 @@ Route::resource('social-link', App\Http\Controllers\Admins\SociallinkController:
 Route::get('edit-social-link/{id}', [SociallinkController::class, 'edit']);
 Route::put('social-link-update', [SociallinkController::class, 'update']);
 Route::delete('delete-social-link', [SociallinkController::class, 'destroy']);
+
+
+
+//////////////////////Telepartner/////////////////////////////////
+Route::resource('tele-partner', App\Http\Controllers\Admins\TelepartnerController::class);
+Route::get('edit-tele-partner/{id}', [TelepartnerController::class, 'edit']);
+Route::put('tele-partner-update', [TelepartnerController::class, 'update']);
+Route::delete('delete-tele-partner', [TelepartnerController::class, 'destroy']);
 
 
 //////////////////////Status/////////////////////////////////
