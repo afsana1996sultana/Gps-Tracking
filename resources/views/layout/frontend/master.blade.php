@@ -49,7 +49,7 @@
     <script src="{{url('frontend/js/vendor/modernizr-3.5.0.min.js')}}"></script>
     <script src="{{url('frontend/js/popper.min.js')}}" defer></script>
     <script src="{{url('frontend/js/bootstrap.min.js')}}" defer></script>
-    <script src="{{url('frontend/js/active.js')}}" defer></script>
+    <!-- <script src="{{url('frontend/js/active.js')}}" defer></script> -->
     <script src="{{url('frontend/js/scripts.js')}}" defer></script>
     <script src="{{url('frontend/js/zeynep.js')}}" defer></script>
     <script src="{{url('frontend/js/owl.carousel.min.js')}}" defer></script>
@@ -71,23 +71,35 @@
             }
         });
 
-        $('#btn_sub').on('click', function(){
-            var menu_cons_class_chk = ($('#menu_container').attr('class')).trim().toString();
+        $('a').on('click', function(){
+            var slug = $(this).data('slug');
+            var y = (((($(this).parent()[0]).lastChild).previousElementSibling).id).toString().trim();
+            if(slug == "our-services"){
+                var menu_cons_class_chk = ($('#menu_container').attr('class')).trim().toString();
             var ifExist = menu_cons_class_chk.indexOf('submenu-opened');
             console.log(ifExist);
             if(ifExist == -1){
                 $('#menu_container').addClass('submenu-opened');
-                $('#About').addClass('opened').addClass('current');
+                $("#"+y).addClass('opened').addClass('current');
             }else{
                 $('#menu_container').removeClass('submenu-opened');
-                $('#About').removeClass('opened').removeClass('current');
+                $("#"+y).removeClass('opened').removeClass('current');
             }
+            }else{
+                if(slug){
+                    location.replace(slug);
+                }
+            }           
         });
 
-        // $('#data-submenu-close').on('click', function(){
-        //     $('#menu_container').removeClass('submenu-opened');
-        //     $('#About').removeClass('opened').removeClass('current');
-        // });
+        $('a').on('click', function(){
+            var id_keyword = (($(this).attr('id')).toString()).slice(0,4);
+            var id_number = (($(this).attr('id')).toString()).slice(5);
+            if(id_keyword == 'back'){
+                // $('#menu_container').removeClass('submenu-opened').removeClass('opened');
+                $('#About'+id_number).removeClass('opened').removeClass('current');
+            }            
+        });
     </script>
 </body>
 </html>

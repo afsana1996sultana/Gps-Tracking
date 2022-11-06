@@ -54,21 +54,19 @@
    <!-- Mobile Menu -->
    <div class="mobile_menu_header">
       <div id="menu_container" class="zeynep">
-         <!-- <a href="index.html" class="navbar_brand_mobile">
-            <img style="height: 80px; width: 195px;" src="" alt="">
-         </a> -->
-         <ul>
-            @foreach ($menu as $val)
+         <ul>    
+            @foreach ($menu as $x => $val)
                <?php
-                  $Submenu = App\Models\Submenu::where('menu_id', $val->id)->get();
+                  $Submenu = App\Models\Submenu::where('menu_id', $val->id)->get();                 
                ?>
+               
                <li class="has-submenu">
-                  <a id="btn_sub" href="{{ $val->slug }}" data-submenu="About">{{ $val->menu_name }}</a>
-                  <div id="About" class="submenu">
-                     <!-- <div class="submenu-header">
-                        <a href="#" data-submenu-close="About" id="">
+                  <a id=""  data-slug="{{ $val->slug }}" data-submenu="About">{{ $val->menu_name }}</a>
+                  <div id="About{{$x}}" class="submenu">
+                     <div class="submenu-header">
+                        <a href="#" data-submenu-close="About" id="back_{{$x}}">
                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back </a>
-                     </div> -->
+                     </div>
                      <ul>
                         @foreach($Submenu as $subData)
                            <li>
@@ -77,13 +75,13 @@
                         @endforeach
                      </ul>
                   </div>
-               </li>
+               </li>               
             @endforeach
          </ul>
       </div>
       <main>
          @foreach ($header as $val)
-            <a href="index.html" class="navbar_brand_mobile">
+            <a href="{{url('/')}}" class="navbar_brand_mobile">
                <img src="{{ asset('img/' . $val->company_logo) }}" alt="SeeMove" style="height: 80px; width: 195px;">
             </a>
          @endforeach

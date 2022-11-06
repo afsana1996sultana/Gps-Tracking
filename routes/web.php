@@ -10,6 +10,8 @@ use App\Http\Controllers\Admins\SociallinkController;
 use App\Http\Controllers\Admins\MenuController;
 use App\Http\Controllers\Admins\SubmenuController;
 use App\Http\Controllers\Admins\TelepartnerController;
+use App\Http\Controllers\Admins\ClientController;
+use App\Http\Controllers\Admins\AchievementController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -24,11 +26,11 @@ use Illuminate\Support\Facades\Auth;
 */
 //Frontend
 
-Route::get('home', function(){
-    return redirect('/');
+Route::get('/', function(){
+    return redirect('/home');
 });
 
-Route::get('/', [App\Http\Controllers\FrontendController::class, 'home'])->name('home');
+// Route::get('/', [App\Http\Controllers\FrontendController::class, 'home'])->name('home');
 
 Route::get('home', [App\Http\Controllers\FrontendController::class, 'home'])->name('home');
 
@@ -99,6 +101,21 @@ Route::resource('tele-partner', App\Http\Controllers\Admins\TelepartnerControlle
 Route::get('edit-tele-partner/{id}', [TelepartnerController::class, 'edit']);
 Route::put('tele-partner-update', [TelepartnerController::class, 'update']);
 Route::delete('delete-tele-partner', [TelepartnerController::class, 'destroy']);
+
+
+
+//////////////////////Clients/////////////////////////////////
+Route::resource('clients', App\Http\Controllers\Admins\ClientController::class);
+Route::get('edit-clients/{id}', [ClientController::class, 'edit']);
+Route::put('clients-update', [ClientController::class, 'update']);
+Route::delete('delete-clients', [ClientController::class, 'destroy']);
+
+
+//////////////////////Achievements/////////////////////////////////
+Route::resource('achievements', App\Http\Controllers\Admins\AchievementController::class);
+Route::get('edit-achievements/{id}', [AchievementController::class, 'edit']);
+Route::put('achievements-update', [AchievementController::class, 'update']);
+Route::delete('delete-achievements', [AchievementController::class, 'destroy']);
 
 
 //////////////////////Status/////////////////////////////////

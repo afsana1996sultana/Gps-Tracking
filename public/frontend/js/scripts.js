@@ -207,12 +207,15 @@
     });
     
     
-     $(document).ready(function () {
+    $(document).ready(function () {
         $(".brand_logos_item_active").owlCarousel({
             loop:true,
-            nav:true,
             margin:10,
-            dots:false,
+            nav:false,
+            dots:true,
+            autoplay:true,
+            autoplayTimeout:3000,
+            autoplayHoverPause:true,
             responsive:{
                 0:{
                     items:2
@@ -221,12 +224,12 @@
                     items:2
                 },
                 1000:{
-                    items:10
+                    items:5
                 }
             }
         });
         
-         $(".brand_logos_item_active1").owlCarousel({
+        $(".brand_logos_item_active1").owlCarousel({
         loop:true,
         nav:true,
         margin:10,
@@ -247,29 +250,70 @@
     
     
     $('.live_project_items_active').owlCarousel({
-                    loop:true,
-                    margin:10,
-                    nav:false,
-                    dots:true,
-                    autoplay:true,
-                    autoplayTimeout:3000,
-                    autoplayHoverPause:true,
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        600:{
-                            items:2
-                        },
-                        1000:{
-                            items:4
-                        }
-                    }
-                });
-    
-    
-    
-    
+            loop:true,
+            margin:10,
+            nav:false,
+            dots:true,
+            autoplay:true,
+            autoplayTimeout:3000,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:2
+                },
+                1000:{
+                    items:4
+                }
+            }
+        });
+    });
+
+
+    //testimonial slider 
+    $(document).ready(function() {
+            $(".testimonial_section_box_active").owlCarousel({
+                loop: true,
+                nav: false,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        });
+
+        $(".software_technology_active").owlCarousel({
+            loop: true,
+            nav: false,
+            margin: 10,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 3
+            }
+            }
+        });
     });
     
     

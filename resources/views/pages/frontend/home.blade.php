@@ -11,9 +11,10 @@
     }
 
     .responsive {
-    width: 100%;
-    height: auto;
+        width: 100%;
+        height: auto;
     }
+
 </style>
 <!-- Main content Start-->        
 <div class="main_slider_seciton">
@@ -311,7 +312,6 @@
     </section>
 
     <!--- testimonial section include --->
-    <!-- Testimonial Area -->
     <section class="testimonial-area_section services_area_section_img" style="background-image: url('frontend/image/clinet-pay.jpg');">
         <div class="testimonial_area_bg_overlay">
             <div class="container-fluid">
@@ -454,33 +454,14 @@
 
             <div class="counter-area-inner counter-style-2">
                 <div class="row no-gutters align-items-center">
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
-                        <div class="counter text-center">
-                            <h1 class="plus_counter counter-active">100</h1>
-                            <h6>CLIENTS</h6>
+                    @foreach ($achievement as $val)
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                            <div class="counter text-center">
+                                <h1 class="plus_counter counter-active">{{ $val->count }}</h1>
+                                <h6>{{ $val->name }}</h6>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
-                        <div class="counter text-center">
-                            <h1 class="plus_counter counter-active">10</h1>
-                            <h6>YEARS IN THE IoT INDUSTRY</h6>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
-                        <div class="counter text-center">
-                            <h1 class="plus_counter counter-active">42M</h1>
-                            <h6>PRODUCTS DELIVERED</h6>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
-                        <div class="counter text-center">
-                            <h1 class="percent_counter counter-active">60</h1>
-                            <h6>BANGLADESH HAVE FELT OUR IMPACT</h6>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -501,33 +482,21 @@
                 <div class="col-lg-12">
                     <div class="brand_logos_item">
                         <div class="owl-carousel owl-theme brand_logos_item_active">
-                            <div class="item">
-                                <div class="brand_logo_item_box">
-                                    <a href="#">
-                                        <img src="{{url('frontend/image/ecohat.png')}}" alt="seemove">
-                                    </a>
-                                </div>
+                            @foreach ($client as $val)
+                                <div class="item">
+                                    <div class="brand_logo_item_box">
+                                        <a href="">
+                                            <img src="{{ asset('img/' . $val->client_logo) }}" alt="client_logo">
+                                        </a>
+                                    </div>
 
-                                <div class="brand_logo_item_box">
-                                    <a href="#">
-                                        <img src="{{url('frontend/image/ecohat.png')}}" alt="seemove">
-                                    </a>
+                                    <div class="brand_logo_item_box">
+                                        <a href="#">
+                                            <img src="{{ asset('img/' . $val->client_logo) }}" alt="client_logo">
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="brand_logo_item_box">
-                                    <a href="#">
-                                        <img src="{{url('frontend/image/estore-classic.jpg')}}" alt="seemove">
-                                    </a>
-                                </div>
-
-                                <div class="brand_logo_item_box">
-                                    <a href="#">
-                                        <img src="{{url('frontend/image/estore-classic.jpg')}}" alt="seemove">
-                                    </a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -536,5 +505,4 @@
     </div>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 @endsection

@@ -27,29 +27,13 @@
                 <hr>
 
                 <div class="row"> 
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="partner_logo">
-                            <img src="{{url('frontend/image/airtel.png')}}" alt="SeeMove">
+                    @foreach ($telepartner as $val)
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="partner_logo">
+                                <img src="{{ asset('img/' . $val->partner_logo) }}" alt="SeeMove">
+                            </div>  
                         </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="partner_logo">
-                            <img src="{{url('frontend/image/banglalink.png')}}" alt="SeeMove">
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="partner_logo">
-                            <img src="{{url('frontend/image/grameenphone.png')}}" alt="SeeMove">
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="partner_logo">
-                            <img src="{{url('frontend/image/teletalk.png')}}" alt="SeeMove">
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

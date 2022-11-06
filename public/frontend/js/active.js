@@ -163,40 +163,40 @@
 
 	/* Lightgallery Activations */
 	// Video Area video popup
-	$('.video-area-inner').lightGallery({
-		selector: '.video-popup-trigger'
-	});
+	// $('.video-area-inner').lightGallery({
+	// 	selector: '.video-popup-trigger'
+	// });
 
 
 
 
 	// Video blog video popup
-	$('.pg-blog-video').lightGallery({
-		selector: '.pg-blog-thumb a'
-	});
+	// $('.pg-blog-video').lightGallery({
+	// 	selector: '.pg-blog-thumb a'
+	// });
 
 
 
 
 	// Videobox video popup
-	$('.video-box').lightGallery({
-		selector: 'a.play-button'
-	});
+	// $('.video-box').lightGallery({
+	// 	selector: 'a.play-button'
+	// });
 
 
 
 	// Video blog details video popup
-	$('.blog-video').lightGallery({
-		selector: '.blog-thumb a'
-	});
+	// $('.blog-video').lightGallery({
+	// 	selector: '.blog-thumb a'
+	// });
 
 
 
 	// Blog details image popup
-	$('.blog-details-thumb').lightGallery({
-		selector: 'img',
-		thumbnail: false
-	});
+	// $('.blog-details-thumb').lightGallery({
+	// 	selector: 'img',
+	// 	thumbnail: false
+	// });
 
 
 
@@ -209,129 +209,37 @@
 
 	isotopFilter.find('button:first-child').addClass('active');
 
-	//Images Loaded
-	isotopGrid.imagesLoaded(function () {
-		/*-- init Isotope --*/
-		var initial_items = isotopGrid.data('show');
-		var next_items = isotopGrid.data('load');
-		var loadMoreBtn = $('.load-more-toggle');
-
-		var $grid = isotopGrid.isotope({
-			itemSelector: isotopGridItem,
-			layoutMode: 'masonry',
-		});
-
-		/*-- Isotop Filter Menu --*/
-		isotopFilter.on('click', 'button', function () {
-			var filterValue = $(this).attr('data-filter');
-
-			isotopFilter.find('button').removeClass('is-checked');
-			$(this).addClass('is-checked');
-
-			// use filterFn if matches value
-			$grid.isotope({
-				filter: filterValue
-			});
-		});
-
-		/*-- Update Filter Counts --*/
-		function updateFilterCounts() {
-			// get filtered item elements
-			var itemElems = $grid.isotope('getFilteredItemElements');
-
-			if (isotopGridItemSelector.hasClass('hidden')) {
-				isotopGridItemSelector.removeClass('hidden');
-			}
-
-			var index = 0;
-
-			$(itemElems).each(function () {
-				if (index >= initial_items) {
-					$(this).addClass('hidden');
-				}
-				index++;
-			});
-
-			$grid.isotope('layout');
-		}
-
-		/*-- Function that Show items when page is loaded --*/
-		function showNextItems(pagination) {
-			var itemsMax = $('.hidden').length;
-			var itemsCount = 0;
-
-			$('.hidden').each(function () {
-				if (itemsCount < pagination) {
-					$(this).removeClass('hidden');
-					itemsCount++;
-				}
-			});
-
-			if (itemsCount >= itemsMax) {
-				loadMoreBtn.hide();
-			}
-
-			$grid.isotope('layout');
-		}
-
-		/*-- Function that hides items when page is loaded --*/
-		function hideItems(pagination) {
-			var itemsMax = $(isotopGridItem).length;
-			var itemsCount = 0;
-
-			$(isotopGridItem).each(function () {
-				if (itemsCount >= pagination) {
-					$(this).addClass('hidden');
-				}
-				itemsCount++;
-			});
-
-			if (itemsCount < itemsMax || initial_items >= itemsMax) {
-				loadMoreBtn.hide();
-			}
-
-			$grid.isotope('layout');
-		}
-
-		/*-- Function that Load items when Button is Click --*/
-		loadMoreBtn.on('click', function (e) {
-			e.preventDefault();
-			showNextItems(next_items);
-		});
-
-		hideItems(initial_items);
-	});
 
 
 
 	// Portfolio popup with zoom button
-	$('.portfolios-zoom-button-holder').lightGallery({
-		selector: '.portfolio-zoom-trigger',
-		thumbnail: false
-	});
+	// $('.portfolios-zoom-button-holder').lightGallery({
+	// 	selector: '.portfolio-zoom-trigger',
+	// 	thumbnail: false
+	// });
 
 
 	// Portfolio minimal 1 popup
-	$('.portfolios-minimal-1').lightGallery({
-		selector: '.portfolio',
-		thumbnail: true
-	});
+	// $('.portfolios-minimal-1').lightGallery({
+	// 	selector: '.portfolio',
+	// 	thumbnail: true
+	// });
 
 
 
 	// Portfolio minimal 2 popup
-	$('.portfolios-minimal-2').lightGallery({
-		selector: '.portfolio',
-		thumbnail: true
-	});
+	// $('.portfolios-minimal-2').lightGallery({
+	// 	selector: '.portfolio',
+	// 	thumbnail: true
+	// });
 
 
 
 	// Portfolio Details Image Popup
-	$('.pg-portfolio-images').lightGallery({
-		selector: 'a',
-		thumbnail: true
-	});
+	// $('.pg-portfolio-images').lightGallery({
+	// 	selector: 'a',
+	// 	thumbnail: true
+	// });
 
 
 
