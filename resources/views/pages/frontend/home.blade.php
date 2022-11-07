@@ -20,7 +20,9 @@
 <div class="main_slider_seciton">
     <div class="slider_img_box">
         <video autoplay muted loop id="myVideo">
-            <source src="{{url('frontend/video/Queclink.mp4')}}" type="video/mp4">
+            @foreach ($videocontent as $val)
+                <source src="{{ asset('video/' . $val->video_url) }}" type="video/mp4">
+            @endforeach
         </video>
     </div>
 </div>
@@ -329,57 +331,20 @@
                             <div class="col-md-12">
                                 <div class="testimonial_section_box">
                                     <div class="owl-carousel owl-theme testimonial_section_box_active">
-                                        <div class="item">
-                                            <div class="testimonial_section_item">
-                                                <div class="testimonial_img">
-                                                    <img src="{{url('frontend/image/classic-it-estore.jpg')}}" alt="SeeMove">
-                                                </div>
-                                                <p>WOOD TECH</p>
-                                                <h4>GPS Fleet Tracker</h4>
-                                                <div class="testimonial_contant">
-                                                    <p> I commend SeeMove for a very particular trait of their character and adaptability. The combination of people they work with during a project amazes me. They have developed my organization&#039;s website e...</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="item">
-                                            <div class="testimonial_section_item">
-                                                <div class="testimonial_img">
-                                                    <img src="{{url('frontend/image/classic-it-estore.jpg')}}" alt="SeeMove">
-                                                </div>
-                                                <p>SYSCON</p>
-                                                <h4>GPS Fleet Tracker</h4>
-                                                <div class="testimonial_contant">
-                                                    <p> They are doing well and very professional. The team brought me the required amount of lead and made the transition easier than me. They are always responsive to any question I have, they keep me informed and solve any is...</p>
+                                        @foreach ($testimonial as $val)
+                                            <div class="item">
+                                                <div class="testimonial_section_item">
+                                                    <div class="testimonial_img">
+                                                        <img src="{{ asset('img/' . $val->img) }}" alt="SeeMove">
+                                                    </div>
+                                                    <p>{{ $val->company_name }}</p>
+                                                    <h4>{{ $val->header }}</h4>
+                                                    <div class="testimonial_contant">
+                                                        <p>{!! $val->detail !!}</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        
-                                        <div class="item">
-                                            <div class="testimonial_section_item">
-                                                <div class="testimonial_img">
-                                                <img src="{{url('frontend/image/classic-it-estore.jpg')}}" alt="SeeMove">
-                                                </div>
-                                                <p>NS TEXTILE</p>
-                                                <h4>GPS Fleet Tracker</h4>
-                                                <div class="testimonial_contant">
-                                                <p> They are doing well and very professional. The team brought me the required amount of lead and made the transition easier than me. They are always responsive to any question I have, they keep me informed and solve any is...</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="item">
-                                            <div class="testimonial_section_item">
-                                                <div class="testimonial_img">
-                                                    <img src="{{url('frontend/image/classic-it-estore.jpg')}}" alt="SeeMove">
-                                                </div>
-                                                <p>BFL</p>
-                                                <h4>GPS Fleet Tracker</h4>
-                                                <div class="testimonial_contant">
-                                                    <p> I commend SeeMove for a very particular trait of their character and adaptability. The combination of people they work with during a project amazes me. They have developed my organization&#039;s website e...</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -399,38 +364,18 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="owl-carousel owl-theme software_technology_active">
-                                        <div class="item">
-                                            <div class="technology_logo">
-                                                <img src="{{url('frontend/image/car1.jpg')}}" alt="SeeMove">
-                                                <p>PHP</p>
+                                        @foreach ($cartraker as $val)
+                                            <div class="item">
+                                                <div class="technology_logo">
+                                                    <img src="{{ asset('img/' . $val->img1) }}" alt="SeeMove">
+                                                    <p>{{ $val->name }}</p>
+                                                </div>
+                                                <div class="technology_logo">
+                                                    <img src="{{ asset('img/' . $val->img2) }}" alt="SeeMove">
+                                                    <p>{{ $val->name }}</p>
+                                                </div>
                                             </div>
-                                            <div class="technology_logo">
-                                                <img src="{{url('frontend/image/car2.jpg')}}" alt="SeeMove">
-                                                <p>Laravel</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="item">
-                                            <div class="technology_logo">
-                                                <img src="{{url('frontend/image/car3.jpg')}}" alt="SeeMove">
-                                                <p>ASP.Net</p>
-                                            </div>
-                                            <div class="technology_logo">
-                                                <img src="{{url('frontend/image/car4.jpg')}}" alt="SeeMove">
-                                                <p>Python</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="item">
-                                            <div class="technology_logo">
-                                                <img src="{{url('frontend/image/car5.jpg')}}" alt="SeeMove">
-                                                <p>React.JS</p>
-                                            </div>
-                                            <div class="technology_logo">
-                                                <img src="{{url('frontend/image/car6.jpg')}}" alt="SeeMove">
-                                                <p>VUE.JS</p>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -491,7 +436,7 @@
                                     </div>
 
                                     <div class="brand_logo_item_box">
-                                        <a href="#">
+                                        <a href="">
                                             <img src="{{ asset('img/' . $val->client_logo) }}" alt="client_logo">
                                         </a>
                                     </div>

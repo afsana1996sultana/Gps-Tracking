@@ -12,6 +12,18 @@ use App\Http\Controllers\Admins\SubmenuController;
 use App\Http\Controllers\Admins\TelepartnerController;
 use App\Http\Controllers\Admins\ClientController;
 use App\Http\Controllers\Admins\AchievementController;
+use App\Http\Controllers\Admins\TestimonialController;
+use App\Http\Controllers\Admins\CartrakerController;
+use App\Http\Controllers\Frontend\AboutusController;
+use App\Http\Controllers\Frontend\OurserviceController;
+use App\Http\Controllers\Frontend\OurclientController;
+use App\Http\Controllers\Frontend\PricingController;
+use App\Http\Controllers\Frontend\BlogController;
+use App\Http\Controllers\Frontend\ContactusController;
+use App\Http\Controllers\Frontend\PayController;
+use App\Http\Controllers\Frontend\OurteamController;
+use App\Http\Controllers\Frontend\PrivacyController;
+use App\Http\Controllers\Frontend\TermsController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -37,6 +49,46 @@ Route::get('home', [App\Http\Controllers\FrontendController::class, 'home'])->na
 
 ////////////////////Newsletter-Post/////////////////////////
 Route::post('newsletter_store',[NewsletterController::class,'store' ])->name('newsletter_store');
+
+
+////////////////////About-Us/////////////////////////
+Route::get('/about-us',[AboutusController::class,'index' ]);
+
+
+////////////////////Our-Services/////////////////////////
+Route::get('/our-services',[OurserviceController::class,'index' ]);
+
+
+////////////////////Our-Clients/////////////////////////
+Route::get('/our-clients',[OurclientController::class,'index' ]);
+
+
+////////////////////Pricing/////////////////////////
+Route::get('/pricing',[PricingController::class,'index' ]);
+
+
+////////////////////Blog/////////////////////////
+Route::get('/blog',[BlogController::class,'index' ]);
+
+
+////////////////////Contact-Us/////////////////////////
+Route::get('/contact-us',[ContactusController::class,'index' ]);
+
+
+////////////////////Pay/////////////////////////
+Route::get('/pay',[PayController::class,'index' ]);
+
+
+////////////////////Our-Team/////////////////////////
+Route::get('/our-team',[OurteamController::class,'index' ]);
+
+
+////////////////////Privacy-Policy/////////////////////////
+Route::get('/privacy-policy',[PrivacyController::class,'index' ]);
+
+
+////////////////////Terms & Condition/////////////////////////
+Route::get('/terms&condition',[TermsController::class,'index' ]);
 
 
 Route::get('admin', function(){
@@ -75,6 +127,10 @@ Route::delete('delete-sub-menu', [SubmenuController::class, 'destroy']);
 
 ////////////////////Header/////////////////////////////////
 Route::resource('header', App\Http\Controllers\Admins\HeaderController::class);
+
+
+////////////////////Video-Content/////////////////////////////////
+Route::resource('content', App\Http\Controllers\Admins\VideocontentController::class);
 
 
 ////////////////////Footer/////////////////////////////////
@@ -116,6 +172,23 @@ Route::resource('achievements', App\Http\Controllers\Admins\AchievementControlle
 Route::get('edit-achievements/{id}', [AchievementController::class, 'edit']);
 Route::put('achievements-update', [AchievementController::class, 'update']);
 Route::delete('delete-achievements', [AchievementController::class, 'destroy']);
+
+
+
+//////////////////////Testimonial/////////////////////////////////
+Route::resource('testimonials', App\Http\Controllers\Admins\TestimonialController::class);
+Route::get('edit-testimonials/{id}', [TestimonialController::class, 'edit']);
+Route::put('testimonials-update', [TestimonialController::class, 'update']);
+Route::delete('delete-testimonials', [TestimonialController::class, 'destroy']);
+
+
+
+//////////////////////Cartrakers/////////////////////////////////
+Route::resource('car-trakers', App\Http\Controllers\Admins\CartrakerController::class);
+Route::get('edit-car-trakers/{id}', [CartrakerController::class, 'edit']);
+Route::put('car-trakers-update', [CartrakerController::class, 'update']);
+Route::delete('delete-car-trakers', [CartrakerController::class, 'destroy']);
+
 
 
 //////////////////////Status/////////////////////////////////

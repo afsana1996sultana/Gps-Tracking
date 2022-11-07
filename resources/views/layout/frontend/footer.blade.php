@@ -11,6 +11,11 @@
 .footer_top_seciton{
     padding-top: 35px;
 }
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
 </style>
 
 <footer id="footer" class="footer-area"> 

@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('cartrakers', function (Blueprint $table) {
             $table->bigIncrements('id')->primary;
             $table->string('name');
-            $table->string('img');
+            $table->string('img1');
+            $table->string('img2');
             $table->softDeletes();
             $table->timestamps();
         });
