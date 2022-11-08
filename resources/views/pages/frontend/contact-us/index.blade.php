@@ -59,6 +59,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-8 col-sm-12">
                 <div class="contact_waise_service">
                     <div class="section_title">
@@ -68,7 +69,7 @@
                         <div class="row">
                             <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
                                 <label class="full-width radio-label">
-                                <input  onclick="selectService('Vehicle service center software')" type="radio" id="radio1" class="radio_name"  >
+                                    <input  onclick="selectService('Vehicle service center software')" type="radio" id="radio1" class="radio_name"  >
                                         <div class="contact_waise_service_items_box">
                                             <div class="service_icon">
                                                 <i class="fa fa-code"></i>
@@ -80,9 +81,10 @@
                                     </input>
                                 </label>
                             </div>
+
                             <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
                                 <label class="full-width radio-label">
-                                <input  onclick="selectService('Super shop e-Commerce')" type="radio" id="radio2" class="radio_name"  >
+                                    <input  onclick="selectService('Super shop e-Commerce')" type="radio" id="radio2" class="radio_name"  >
                                         <div class="contact_waise_service_items_box">
                                             <div class="service_icon">
                                                 <i class="fa fa-code"></i>
@@ -94,9 +96,10 @@
                                     </input>
                                 </label>
                             </div>
+
                             <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
                                 <label class="full-width radio-label">
-                                <input  onclick="selectService('Apartment Management Software')" type="radio" id="radio3" class="radio_name"  >
+                                    <input  onclick="selectService('Apartment Management Software')" type="radio" id="radio3" class="radio_name"  >
                                         <div class="contact_waise_service_items_box">
                                             <div class="service_icon">
                                                 <i class="fa fa-code"></i>
@@ -108,9 +111,10 @@
                                     </input>
                                 </label>
                             </div>
+
                             <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
                                 <label class="full-width radio-label">
-                                <input  onclick="selectService('Publication Management Software')" type="radio" id="radio4" class="radio_name"  >
+                                    <input  onclick="selectService('Publication Management Software')" type="radio" id="radio4" class="radio_name"  >
                                         <div class="contact_waise_service_items_box">
                                             <div class="service_icon">
                                                 <i class="fa fa-code"></i>
@@ -122,9 +126,10 @@
                                     </input>
                                 </label>
                             </div>
+
                             <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
                                 <label class="full-width radio-label">
-                                <input  onclick="selectService('Interior Design Website')" type="radio" id="radio5" class="radio_name"  >
+                                    <input  onclick="selectService('Interior Design Website')" type="radio" id="radio5" class="radio_name"  >
                                         <div class="contact_waise_service_items_box">
                                             <div class="service_icon">
                                                 <i class="fa fa-code"></i>
@@ -136,9 +141,10 @@
                                     </input>
                                 </label>
                             </div>
+
                             <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
                                 <label class="full-width radio-label">
-                                <input  onclick="selectService('e-Commerce Apps')" type="radio" id="radio6" class="radio_name"  >
+                                    <input  onclick="selectService('e-Commerce Apps')" type="radio" id="radio6" class="radio_name"  >
                                         <div class="contact_waise_service_items_box">
                                             <div class="service_icon">
                                                 <i class="fa fa-code"></i>
@@ -150,9 +156,10 @@
                                     </input>
                                 </label>
                             </div>
+
                             <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
                                 <label class="full-width radio-label">
-                                <input  onclick="selectService('Restaurant e-Commerce')" type="radio" id="radio7" class="radio_name"  >
+                                    <input  onclick="selectService('Restaurant e-Commerce')" type="radio" id="radio7" class="radio_name"  >
                                         <div class="contact_waise_service_items_box">
                                             <div class="service_icon">
                                                 <i class="fa fa-code"></i>
@@ -164,9 +171,10 @@
                                     </input>
                                 </label>
                             </div>
+
                             <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
                                 <label class="full-width radio-label">
-                                <input  onclick="selectService('Grocery e-Commerce')" type="radio" id="radio8" class="radio_name"  >
+                                    <input  onclick="selectService('Grocery e-Commerce')" type="radio" id="radio8" class="radio_name"  >
                                         <div class="contact_waise_service_items_box">
                                             <div class="service_icon">
                                                 <i class="fa fa-code"></i>
@@ -177,67 +185,11 @@
                                         </div>
                                     </input>
                                 </label>
-                            </div>
-                            <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                                <label class="full-width radio-label">
-                                <input  onclick="selectService('Publication e-Commerce')" type="radio" id="radio9" class="radio_name"  >
-                                        <div class="contact_waise_service_items_box">
-                                            <div class="service_icon">
-                                                <i class="fa fa-code"></i>
-                                            </div>
-                                            <div class="service_title">
-                                                <h4>GPS TRACKER</h4>
-                                            </div>
-                                        </div>
-                                    </input>
-                                </label>
-                            </div>
-                            <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                                <label class="full-width radio-label">
-                                <input  onclick="selectService('Real Estate Management')" type="radio" id="radio10" class="radio_name"  >
-                                        <div class="contact_waise_service_items_box">
-                                            <div class="service_icon">
-                                                <i class="fa fa-code"></i>
-                                            </div>
-                                            <div class="service_title">
-                                                <h4>GPS TRACKER</h4>
-                                            </div>
-                                        </div>
-                                    </input>
-                                </label>
-                            </div>
-                            <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                                <label class="full-width radio-label">
-                                <input  onclick="selectService('Prescription Software')" type="radio" id="radio11" class="radio_name"  >
-                                        <div class="contact_waise_service_items_box">
-                                            <div class="service_icon">
-                                                <i class="fa fa-code"></i>
-                                            </div>
-                                            <div class="service_title">
-                                                <h4>GPS TRACKER</h4>
-                                            </div>
-                                        </div>
-                                    </input>
-                                </label>
-                            </div>
-                            <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                                <label class="full-width radio-label">
-                                <input  onclick="selectService('Diagnostic Center Software')" type="radio" id="radio12" class="radio_name"  >
-                                        <div class="contact_waise_service_items_box">
-                                            <div class="service_icon">
-                                                <i class="fa fa-code"></i>
-                                            </div>
-                                            <div class="service_title">
-                                                <h4>GPS TRACKER</h4>
-                                            </div>
-                                        </div>
-                                    </input>
-                                </label>
-                            </div>
-                                                    
+                            </div>                             
                         </div>
                     </div>
                 </div>
+
                 <div class="contact_form_seciton">
                     <div class="pg-contact-form">
                         <form method="POST" action="#" accept-charset="UTF-8" id="contactMail">
@@ -293,28 +245,12 @@
     </div>
 </section>
 
-<section class="container_map_and_address_section">
-    <div class="container-fluid">
-        <div class="contact_map_and_address">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="contact_map_section">
-                        
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="section-title">
-                                    <h3>Map &amp; Location</h3>
-                                    <p>Welcome to our office all time</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="">
-                                	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d500.92153483474306!2d90.39829970811854!3d23.877597129497193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c573f4be7859%3A0xfe148d927ed0353a!2sClassic%20IT%20%26%20Sky%20Mart%20Ltd.!5e0!3m2!1sen!2sbd!4v1665816257231!5m2!1sen!2sbd" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!--Map Section-->
+<section class="map-section">
+    <div class="map-outer">
+        <div class="no-padding">
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14594.133732833117!2d90.39164766945039!3d23.87069602479931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c4399d7a5e37%3A0xc2a4ee5451f14290!2sSeeMove%20TrackingSolution!5e0!3m2!1sen!2sbd!4v1667901829865!5m2!1sen!2sbd" width="1340" height="500" style="border:0; min-width: 100%;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>

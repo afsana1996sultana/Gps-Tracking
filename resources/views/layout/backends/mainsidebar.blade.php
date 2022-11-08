@@ -34,6 +34,7 @@
         <ul class="dropdown-menu">
           <li class=""><a class="nav-link" href="{{url('header/1/edit')}}">Header</a></li>
           <li class=""><a class="nav-link" href="{{url('content/1/edit')}}">Video-Content</a></li>
+          <li class=""><a class="nav-link" href="{{url('about/1/edit')}}">About Us</a></li>
           <li class=""><a class="nav-link" href="{{url('footer/1/edit')}}">Footer</a></li>
           <li class=""><a class="nav-link" href="{{url('/quick-link')}}">Quicklink</a></li>
           <li class=""><a class="nav-link" href="{{url('/social-link')}}">Sociallink</a></li>

@@ -31,29 +31,32 @@
     <!--- about section include --->
     <section id="about_section_area" class="about_content_homepage about-area bg-white">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="about-content">
-                        <div class="section_title">
-                            <h4>Who We are</h4>
+            <div class="row"> 
+                @foreach ($about as $val)
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">   
+                        <div class="about-content">
+                            <div class="section_title">
+                                <h4>{{ $val->title }}</h4>
+                            </div>
+                            <p style="text-align:justify">
+                                {!! \Illuminate\Support\Str::words(strip_tags($val->detail), 100,'....')  !!}
+                            </p>
+                            <a href="{{url('/about-us')}}" class="btn">
+                                <span>Read More</span>
+                            </a>
                         </div>
-                        <p style="text-align:justify">See Move Ltd. is a&nbsp;results-driven IT agency creating visually refined, unique and tailored digital experiences that&nbsp;are committed to providing quality IT solutions like software solutions, website design &amp; development, mobile apps development, digital marketing, SEO services&nbsp;etc. through an experienced IT team.&nbsp;</p>
-                        <p style="text-align:justify">The company is constituted by a solid and experienced IT team, a technical service team, a digital marketing team.&nbsp;We have about 600+ active customers and 50+ running projects.</p>
-                        <a href="about.html" class="btn">
-                            <span>Read More</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="section_title">
-                        <h4>Watch the Intro</h4>
                     </div>
 
-                    <div class="video_section">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/-4pFI8psSI0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="section_title">
+                            <h4>Watch the Intro</h4>
+                        </div>
+
+                        <div class="video_section">
+                            <iframe width="100%" height="315" src="{{ asset('video/' . $val->about_video_url) }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

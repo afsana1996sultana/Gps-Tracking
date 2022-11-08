@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Frontend;
+use App\Models\About;
 use App\Models\Client;
 use App\Models\Achievement;
 use App\Models\Testimonial;
@@ -27,6 +28,8 @@ class FrontendController extends Controller
         $data['cartraker'] = Cartraker::select('id', 'name', 'img1', 'img2')->get();
 
         $data['videocontent'] = Videocontent::select('id', 'name', 'video_url')->get();
+
+        $data['about'] = About::select('id', 'title', 'detail', 'mission_detail', 'mission_detail', 'mission_title', 'vission_title', 'img', 'icon_img1', 'icon_img2', 'icon_img3', 'about_video_url')->get();
 
         return view('pages.frontend.home', $data);
         

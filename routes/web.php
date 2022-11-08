@@ -24,6 +24,7 @@ use App\Http\Controllers\Frontend\PayController;
 use App\Http\Controllers\Frontend\OurteamController;
 use App\Http\Controllers\Frontend\PrivacyController;
 use App\Http\Controllers\Frontend\TermsController;
+use App\Http\Controllers\Frontend\ServicedetailController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -91,6 +92,10 @@ Route::get('/privacy-policy',[PrivacyController::class,'index' ]);
 Route::get('/terms&condition',[TermsController::class,'index' ]);
 
 
+////////////////////Service/////////////////////////
+Route::get('service_unit/{slug}', [ServicedetailController::class, 'service_unit']);
+
+
 Route::get('admin', function(){
     return redirect('login');
 });
@@ -135,6 +140,10 @@ Route::resource('content', App\Http\Controllers\Admins\VideocontentController::c
 
 ////////////////////Footer/////////////////////////////////
 Route::resource('footer', App\Http\Controllers\Admins\FooterController::class);
+
+
+////////////////////About/////////////////////////////////
+Route::resource('about', App\Http\Controllers\Admins\AboutController::class);
 
 
 //////////////////////Quicklink/////////////////////////////////

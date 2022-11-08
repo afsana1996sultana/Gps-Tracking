@@ -1,5 +1,10 @@
 @extends('layout.frontend.master')
 @section('main_content')
+<style>
+    .about_img_section{
+        padding-top: 90px;
+    }
+</style>
 <!-- Breacrumb Area -->
 <div class="breadcrumb-option"  style="background:url(frontend/image/web-dev-banner-classic-it.jpg); no-repeat scroll center center;background-repeat: no-repeat; background-attachment: scroll; background-size: cover;" data-black-overlay="7">
     <div class="container">
@@ -20,63 +25,55 @@
 
 <!-- About Area -->
 <section class="services-area section-padding-lg bg-white">
-    <div class="container-fluid"> 
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="about-content" style="margin-bottom: 40px;">
-                    <div class="ab-mis-icon">
-                        <img src="frontend/image/who_we_are.png" alt="about classic it & syk mart ltd">
-                        <h2>Who we are</h2>
+    @foreach ($about as $val)
+        <div class="container-fluid"> 
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="about-content" style="margin-bottom: 40px;">
+                        <div class="ab-mis-icon">
+                            <img src="{{ asset('img/' . $val->icon_img1) }}" alt="about SeeMove Ltd">
+                            <h2>{{ $val->title }}</h2>
+                        </div>
+                        <p class="plead">{!! $val->detail !!}</p>
                     </div>
-                    <p class="plead">We Deliver What We Promise</p>
-                    <p style="text-align:justify">Classic IT & Sky Mart Ltd. is a global provider of full-spectrum software services, Classic IT & Sky Mart Ltd. is known the world over for delivering forward-looking, scalable, robust and cost-efficient solutions to its clients. The solutions provided by Classic IT & Sky Mart Ltd. help its global clientele to add unprecedented value to their businesses.</p>
-
-                    <p style="text-align:justify">From concept to effectuation, Classic IT & Sky Mart Ltd. is the answer to the most complex software problems that diverse industry segments face today, &amp; will continue to face in the future. Classic IT & Sky Mart Ltd. represents an amalgamation of a culture of refined innovation and vastly experienced people.</p>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="about_img_section">
-                    <img src="frontend/image/technology-wallpaper.jpg">
+
+                <div class="col-md-5">
+                    <div class="about_img_section">
+                        <img src="{{ asset('img/' . $val->img) }}">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="about_page_background_img">
-        <div class="about_page_background_color">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="about-mission">
-                            <div class="ab-mis-icon">
-                                <img src="frontend/image/icon1.png" alt="Mission of Classic It & Sky Mart ltd">
-                                <h2>Our Mission</h2>
-                            </div>
-                            <p>
-                                <p style="text-align:justify">We have no regrets admitting that we are not like a large organization that sets dozens of missions to accomplish. We are not engaged in seeking profits all the time. But, we have a very particular mission that, we believe, helps and will aid us in thriving.</p>
 
-                                <p style="text-align:justify">We dream of contributing to the digital marketing landscape as a dynamic world where businesses will start, grow and become a brand that has a supreme focus on improving people&rsquo;s lives by providing them with value, insights, opportunities, and opportunities.</p>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="about-mission">
+        <div class="about_page_background_img">
+            <div class="about_page_background_color">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="about-mission">
                                 <div class="ab-mis-icon">
-                                    <img src="frontend/image/icon2.png" alt="Mission of Classic It & Sky Mart ltd">
-                                    <h2>Our Vision</h2>
+                                    <img src="{{ asset('img/' . $val->icon_img2) }}" alt="Mission SeeMove Ltd">
+                                    <h2>{{ $val->mission_title }}</h2>
                                 </div>
-                                <p>
-                                    <p style="text-align:justify">We envision the world of digital marketing as a place for those who look forward to serving others and make a living by honest means.</p>
-
-                                    <p style="text-align:justify">We do possess no hatred for squalid professionals whose only mission is to play false the search engines and spread sweet talks with stories of some instant success to take advantage of disappointed entrepreneurs. We reiterate our vision vividly as we welcome a new member to our family, so the new person has the chance to share a common interest.</p>
-
-                                    <p style="text-align:justify">We are proud that we have the only mission and one vision that has been a very influential tie with us together towards a common goal, SUCCESS we call it.</p>
-                                </p>
+                                <p style="text-align:justify">{!! $val->mission_detail !!}</p>
                             </div>
                         </div>
+
+                        <div class="col-md-6">
+                            <div class="about-mission">
+                                <div class="ab-mis-icon">
+                                    <img src="frontend/image/icon2.png" alt="Vision SeeMove Ltd">
+                                    <h2>{{ $val->vission_title }}</h2>
+                                </div>
+                                <p style="text-align:justify">{!! $val->vission_detail !!}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    @endforeach
 </section>
 <!-- //About Area -->
 

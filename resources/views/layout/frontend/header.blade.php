@@ -27,8 +27,8 @@
                            <ul class="dropdown-menu sub-menu-items">
                               @foreach($Submenu as $subData)
                                  <li>
-                                    <a class="dropdown-item" href="#">
-                                       <i class="fa fa-users"></i>
+                                    <a class="dropdown-item" href="{{url('service_unit/'.$subData->slug)}}">
+                                       <i class="fa fa-hand-o-right"></i>
                                        <span>{{$subData->submenu_name}}</span>
                                     </a>
                                  </li>
