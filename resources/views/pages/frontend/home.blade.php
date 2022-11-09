@@ -74,237 +74,36 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <a href="services/website.html">
-                            <div class="service_section_box">
-                                <div class="service-items">
-                                    <div class="service_icon">
-                                        <i class="fa fa-globe"></i>
+                    @foreach ($service as $val)
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <a href="services/website.html">
+                                <div class="service_section_box">
+                                    <div class="service-items">
+                                        <div class="service_icon">
+                                            <i class="{{ $val->icon }}"></i>
+                                        </div>
+
+                                        <div class="service_containt">
+                                            <div class="section_header">
+                                                <h4>{{ $val->title }}</h4>
+                                            </div>
+
+                                            <div class="section_contant">
+                                                <p>{!! \Illuminate\Support\Str::words(strip_tags($val->details), 30,'....')  !!}</p>
+                                                <a href="{{url('service_unit/'.$val->slug)}}" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="service_containt">
-                                        <div class="section_header">
-                                            <h4>GPS Fleet Tracker</h4>
-                                        </div>
-
-                                        <div class="section_contant">
-                                            <p>If you want to make sure your car is tracked accurately and powerfully – but yet simply – you’ll need the best GPS tracker for the car....</p>
-                                            <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="service_hover_content">
-                                    <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <a href="#">
-                            <div class="service_section_box">
-                                <div class="service-items">
-                                    <div class="service_icon">
-                                        <i class="fa fa-code"></i>
-                                    </div>
-
-                                    <div class="service_containt">
-                                        <div class="section_header">
-                                            <h4>GPS Car Tracker</h4>
-                                        </div>
-
-                                        <div class="section_contant">
-                                            <p>If you want to make sure your car is tracked accurately and powerfully – but yet simply – you’ll need the best GPS tracker for the car....</p>
-                                            <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
+                                    <div class="service_hover_content">
+                                        <a href="{{url('service_unit/'.$val->slug)}}" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                        </a>
                                     </div>
                                 </div>
-
-                                <div class="service_hover_content">
-                                    <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <a href="#">
-                            <div class="service_section_box">
-                                <div class="service-items">
-                                    <div class="service_icon">
-                                        <i class="fa fa-shopping-cart"></i>
-                                    </div>
-
-                                    <div class="service_containt">
-                                        <div class="section_header">
-                                            <h4>GPS Fleet Tracker</h4>
-                                        </div>
-
-                                        <div class="section_contant">
-                                            <p>If you want to make sure your car is tracked accurately and powerfully – but yet simply – you’ll need the best GPS tracker for the car.. </p>
-                                            <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="service_hover_content">
-                                    <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <a href="services/mobile-apps-optimization.html">
-                            <div class="service_section_box">
-                                <div class="service-items">
-                                    <div class="service_icon">
-                                        <i class="fa fa-mobile"></i>
-                                    </div>
-
-                                    <div class="service_containt">
-                                        <div class="section_header">
-                                            <h4>GPS Fleet Tracker</h4>
-                                        </div>
-
-                                        <div class="section_contant">
-                                            <p>If you want to make sure your car is tracked accurately and powerfully – but yet simply – you’ll need the best GPS tracker for the car....</p>
-                                            <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="service_hover_content">
-                                    <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <a href="services/digital-marketing.html">
-                            <div class="service_section_box">
-                                <div class="service-items">
-                                    <div class="service_icon">
-                                        <i class="fa fa-bar-chart-o"></i>
-                                    </div>
-
-                                    <div class="service_containt">
-                                        <div class="section_header">
-                                            <h4>GPS Fleet Tracker</h4>
-                                        </div>
-
-                                        <div class="section_contant">
-                                            <p>If you want to make sure your car is tracked accurately and powerfully – but yet simply – you’ll need the best GPS tracker for the car..</p>
-                                            <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="service_hover_content">
-                                    <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <a href="services/search-engine-optimization.html">
-                            <div class="service_section_box">
-                                <div class="service-items">
-                                    <div class="service_icon">
-                                        <i class="fa fa-search-plus"></i>
-                                    </div>
-                                
-                                    <div class="service_containt">
-                                        <div class="section_header">
-                                            <h4>GPS Fleet Tracker</h4>
-                                        </div>
-
-                                        <div class="service_hover_content">
-                                            <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
-                                        
-                                        <div class="section_contant">
-                                            <p>If you want to make sure your car is tracked accurately and powerfully – but yet simply – you’ll need the best GPS tracker for the car...</p>
-                                            <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <a href="services/domain-hosting.html">
-                            <div class="service_section_box">
-                                <div class="service-items">
-                                    <div class="service_icon">
-                                        <i class="fa fa-server"></i>
-                                    </div>
-
-                                    <div class="service_containt">
-                                        <div class="section_header">
-                                            <h4>GPS Fleet Tracker</h4>
-                                        </div>
-
-                                        <div class="section_contant">
-                                            <p>If you want to make sure your car is tracked accurately and powerfully – but yet simply – you’ll need the best GPS tracker for the car..</p>
-                                            <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="service_hover_content">
-                                    <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <a href="#">
-                            <div class="service_section_box">
-                                <div class="service-items">
-                                    <div class="service_icon">
-                                        <i class="fa fa-edit"></i>
-                                    </div>
-
-                                    <div class="service_containt">
-                                        <div class="section_header">
-                                            <h4>GPS Fleet Tracker</h4>
-                                        </div>
-
-                                        <div class="section_contant">
-                                            <p>If you want to make sure your car is tracked accurately and powerfully – but yet simply – you’ll need the best GPS tracker for the car..</p>
-                                            <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="service_hover_content">
-                                    <a href="#" class="btn btn-sm"> View More <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -11,9 +11,11 @@ use App\Http\Controllers\Admins\MenuController;
 use App\Http\Controllers\Admins\SubmenuController;
 use App\Http\Controllers\Admins\TelepartnerController;
 use App\Http\Controllers\Admins\ClientController;
+use App\Http\Controllers\Admins\ChoosensectionController;
 use App\Http\Controllers\Admins\AchievementController;
 use App\Http\Controllers\Admins\TestimonialController;
 use App\Http\Controllers\Admins\CartrakerController;
+use App\Http\Controllers\Admins\ServiceController;
 use App\Http\Controllers\Frontend\AboutusController;
 use App\Http\Controllers\Frontend\OurserviceController;
 use App\Http\Controllers\Frontend\OurclientController;
@@ -24,7 +26,7 @@ use App\Http\Controllers\Frontend\PayController;
 use App\Http\Controllers\Frontend\OurteamController;
 use App\Http\Controllers\Frontend\PrivacyController;
 use App\Http\Controllers\Frontend\TermsController;
-use App\Http\Controllers\Frontend\ServicedetailController;
+use App\Http\Controllers\Frontend\ServiceunitController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -43,7 +45,7 @@ Route::get('/', function(){
     return redirect('/home');
 });
 
-// Route::get('/', [App\Http\Controllers\FrontendController::class, 'home'])->name('home');
+//Route::get('/', [App\Http\Controllers\FrontendController::class, 'home'])->name('home');
 
 Route::get('home', [App\Http\Controllers\FrontendController::class, 'home'])->name('home');
 
@@ -54,10 +56,6 @@ Route::post('newsletter_store',[NewsletterController::class,'store' ])->name('ne
 
 ////////////////////About-Us/////////////////////////
 Route::get('/about-us',[AboutusController::class,'index' ]);
-
-
-////////////////////Our-Services/////////////////////////
-Route::get('/our-services',[OurserviceController::class,'index' ]);
 
 
 ////////////////////Our-Clients/////////////////////////
@@ -92,8 +90,8 @@ Route::get('/privacy-policy',[PrivacyController::class,'index' ]);
 Route::get('/terms&condition',[TermsController::class,'index' ]);
 
 
-////////////////////Service/////////////////////////
-Route::get('service_unit/{slug}', [ServicedetailController::class, 'service_unit']);
+////////////////////Service-Unit/////////////////////////
+Route::get('service_unit/{url}',[ServiceunitController::class,'service_unit' ]);
 
 
 Route::get('admin', function(){
@@ -146,6 +144,10 @@ Route::resource('footer', App\Http\Controllers\Admins\FooterController::class);
 Route::resource('about', App\Http\Controllers\Admins\AboutController::class);
 
 
+////////////////////Contact/////////////////////////////////
+Route::resource('contact', App\Http\Controllers\Admins\ContactController::class);
+
+
 //////////////////////Quicklink/////////////////////////////////
 Route::resource('quick-link', App\Http\Controllers\Admins\QuicklinkController::class);
 Route::get('edit-quick-link/{id}', [QuicklinkController::class, 'edit']);
@@ -176,6 +178,13 @@ Route::put('clients-update', [ClientController::class, 'update']);
 Route::delete('delete-clients', [ClientController::class, 'destroy']);
 
 
+//////////////////////Choosensection/////////////////////////////////
+Route::resource('choosen-section', App\Http\Controllers\Admins\ChoosensectionController::class);
+Route::get('edit-choosen-section/{id}', [ChoosensectionController::class, 'edit']);
+Route::put('choosen-section-update', [ChoosensectionController::class, 'update']);
+Route::delete('delete-choosen-section', [ChoosensectionController::class, 'destroy']);
+
+
 //////////////////////Achievements/////////////////////////////////
 Route::resource('achievements', App\Http\Controllers\Admins\AchievementController::class);
 Route::get('edit-achievements/{id}', [AchievementController::class, 'edit']);
@@ -197,6 +206,14 @@ Route::resource('car-trakers', App\Http\Controllers\Admins\CartrakerController::
 Route::get('edit-car-trakers/{id}', [CartrakerController::class, 'edit']);
 Route::put('car-trakers-update', [CartrakerController::class, 'update']);
 Route::delete('delete-car-trakers', [CartrakerController::class, 'destroy']);
+
+
+
+//////////////////////Services/////////////////////////////////
+Route::resource('service', App\Http\Controllers\Admins\ServiceController::class);
+Route::get('edit-service/{id}', [ServiceController::class, 'edit']);
+Route::put('service-update', [ServiceController::class, 'update']);
+Route::delete('delete-service', [ServiceController::class, 'destroy']);
 
 
 

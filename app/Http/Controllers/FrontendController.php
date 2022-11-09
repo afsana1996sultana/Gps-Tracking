@@ -9,6 +9,7 @@ use App\Models\Achievement;
 use App\Models\Testimonial;
 use App\Models\Cartraker;
 use App\Models\Videocontent;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Cache\RateLimiting\Limit;
@@ -30,6 +31,8 @@ class FrontendController extends Controller
         $data['videocontent'] = Videocontent::select('id', 'name', 'video_url')->get();
 
         $data['about'] = About::select('id', 'title', 'detail', 'mission_detail', 'mission_detail', 'mission_title', 'vission_title', 'img', 'icon_img1', 'icon_img2', 'icon_img3', 'about_video_url')->get();
+
+        $data['service'] = Service::select('id', 's_name', 'title', 'other_title', 'heading', 'other_heading', 'slug', 'icon', 'details', 'image')->get();
 
         return view('pages.frontend.home', $data);
         

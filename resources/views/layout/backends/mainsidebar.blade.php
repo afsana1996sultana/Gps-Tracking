@@ -20,6 +20,14 @@
 
 
       <li class="nav-item dropdown">
+        <a href="#" class="nav-link has-dropdown"><i class="fas fa-edit"></i><span>Services</span></a>
+        <ul class="dropdown-menu">
+          <li class=""><a class="nav-link" href="{{url('/service')}}">All Services</a></li>
+        </ul>
+      </li>
+
+
+      <li class="nav-item dropdown">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-cog"></i><span>Settings</span></a>
         <ul class="dropdown-menu">
           <li class=""><a class="nav-link" href="{{url('/menu')}}">Menu</a></li>
@@ -34,15 +42,26 @@
         <ul class="dropdown-menu">
           <li class=""><a class="nav-link" href="{{url('header/1/edit')}}">Header</a></li>
           <li class=""><a class="nav-link" href="{{url('content/1/edit')}}">Video-Content</a></li>
-          <li class=""><a class="nav-link" href="{{url('about/1/edit')}}">About Us</a></li>
           <li class=""><a class="nav-link" href="{{url('footer/1/edit')}}">Footer</a></li>
           <li class=""><a class="nav-link" href="{{url('/quick-link')}}">Quicklink</a></li>
           <li class=""><a class="nav-link" href="{{url('/social-link')}}">Sociallink</a></li>
-          <li class=""><a class="nav-link" href="{{url('/clients')}}">Clients</a></li>
+          <li class=""><a class="nav-link" href="{{url('/choosen-section')}}">Choosen Section</a></li>
           <li class=""><a class="nav-link" href="{{url('/tele-partner')}}">Tele-Partners</a></li>
           <li class=""><a class="nav-link" href="{{url('/achievements')}}">Achievements</a></li>
           <li class=""><a class="nav-link" href="{{url('/testimonials')}}">Testimonials</a></li>
           <li class=""><a class="nav-link" href="{{url('/car-trakers')}}">Car-Trakers</a></li>
+        </ul>
+      </li>
+
+
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link has-dropdown"><i class="fas fa-cog"></i><span>Pages</span></a>
+        <ul class="dropdown-menu">
+          <li class=""><a class="nav-link" href="{{url('about/1/edit')}}">About Us</a></li>
+          <li class=""><a class="nav-link" href="{{url('/clients')}}">Our Clients</a></li>
+          <li class=""><a class="nav-link" href="{{url('/all-pricing')}}">Pricing</a></li>
+          <li class=""><a class="nav-link" href="{{url('contact/1/edit')}}">Contacts</a></li>
+          <li class=""><a class="nav-link" href="{{url('all-pay')}}">Pay</a></li>
         </ul>
       </li>
 

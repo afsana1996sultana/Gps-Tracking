@@ -10135,7 +10135,7 @@
     border-bottom: 1px solid #efefef;
   }
   .zeynep ul > li.has-submenu > a {
-    background-image: url(images/submenu-arrow.html);
+    /* background-image: url(images/submenu-arrow.html); */
     background-position: right 20px center;
     background-repeat: no-repeat;
     background-size: 8px 14px;

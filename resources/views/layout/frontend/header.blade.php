@@ -18,24 +18,58 @@
 
                   <div class="collapse navbar-collapse" id="main_nav">
                      <ul class="navbar-nav mx-auto">
-                     @foreach ($menu as $val)
-                        <?php
-                           $Submenu = App\Models\Submenu::where('menu_id', $val->id)->get();
-                        ?>
                         <li class="nav-item dropdown">
-                           <a class="nav-link" href="{{ $val->slug }}" data-bs-toggle="dropdown">{{ $val->menu_name }}</a>
-                           <ul class="dropdown-menu sub-menu-items">
-                              @foreach($Submenu as $subData)
-                                 <li>
-                                    <a class="dropdown-item" href="{{url('service_unit/'.$subData->slug)}}">
-                                       <i class="fa fa-hand-o-right"></i>
-                                       <span>{{$subData->submenu_name}}</span>
-                                    </a>
-                                 </li>
-                              @endforeach
-                           </ul>
+                           <a class="nav-link" href="{{url('/')}}">Home</a>
+                           <ul class="dropdown-menu sub-menu-items"></ul>
                         </li>
-                     @endforeach   
+
+                        <li class="nav-item dropdown">
+                           <a class="nav-link" href="{{url('/about-us')}}">About Us</a>
+                           <ul class="dropdown-menu sub-menu-items"></ul>
+                        </li>
+                        @foreach ($menu as $val)
+                           <li class="nav-item dropdown">
+                              <a class="nav-link" href="{{url('/')}}" data-bs-toggle="dropdown">{{ $val->menu_name }}</a>
+                              <?php
+                                 $Submenu = App\Models\Submenu::where('menu_id', $val->id)->get();
+                              ?>
+                              <ul class="dropdown-menu sub-menu-items">
+                                 @foreach($Submenu as $subData)
+                                    <li>
+                                       <a class="dropdown-item" href="{{url('service_unit/'.$subData->slug)}}">
+                                          <i class="fa fa-hand-o-right"></i>
+                                          <span>{{$subData->submenu_name}}</span>
+                                       </a>
+                                    </li>
+                                 @endforeach
+                              </ul>
+                           </li>
+                        @endforeach  
+                        
+                        <li class="nav-item dropdown">
+                           <a class="nav-link" href="{{url('/our-clients')}}">Our Clients</a>
+                           <ul class="dropdown-menu sub-menu-items"></ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                           <a class="nav-link" href="{{url('/pricing')}}">Pricing</a>
+                           <ul class="dropdown-menu sub-menu-items"></ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                           <a class="nav-link" href="{{url('/blog')}}">Blog</a>
+                           <ul class="dropdown-menu sub-menu-items"></ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                           <a class="nav-link" href="{{url('/contact-us')}}">Contact Us</a>
+                           <ul class="dropdown-menu sub-menu-items"></ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                           <a class="nav-link" href="{{url('/pay')}}">Pay</a>
+                           <ul class="dropdown-menu sub-menu-items"></ul>
+                        </li>
                      </ul>
                   </div>
 
@@ -54,7 +88,15 @@
    <!-- Mobile Menu -->
    <div class="mobile_menu_header">
       <div id="menu_container" class="zeynep">
-         <ul>    
+         <ul> 
+            <li>
+               <a href="{{url('/')}}">Home</a>
+            </li>
+
+            <li>
+               <a href="{{url('/about-us')}}">About Us</a>
+            </li>
+
             @foreach ($menu as $x => $val)
                <?php
                   $Submenu = App\Models\Submenu::where('menu_id', $val->id)->get();                 
@@ -70,13 +112,32 @@
                      <ul>
                         @foreach($Submenu as $subData)
                            <li>
-                              <a href="#">{{$subData->submenu_name}}</a>
+                              <a href="{{url('service_unit/'.$subData->slug)}}">{{$subData->submenu_name}}</a>
                            </li> 
                         @endforeach
                      </ul>
                   </div>
                </li>               
             @endforeach
+            <li>
+               <a href="{{url('/our-clients')}}">Our Clients</a>
+            </li>
+
+            <li>
+               <a href="{{url('/pricing')}}">Pricing</a>
+            </li>
+
+            <li>
+               <a href="{{url('/blog')}}">Blog</a>
+            </li>
+
+            <li>
+               <a href="{{url('/contact-us')}}">Contact Us</a>
+            </li>
+
+            <li>
+               <a href="{{url('/pay')}}">Pay</a>
+            </li>
          </ul>
       </div>
       <main>

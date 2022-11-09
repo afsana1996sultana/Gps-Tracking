@@ -10,8 +10,7 @@
                 <div class="cr-breadcrumb text-center">
                     <h1>Privacy & Policy</h1>
                     <ul class="breadcrumb">
-                        <li><a href="{{url('/')}}">Home</a></li>
-                        <li>Privacy</li>
+                        <li>Assurance For Confidentiality Of User Information</li>
                     </ul>
                 </div>
             </div>

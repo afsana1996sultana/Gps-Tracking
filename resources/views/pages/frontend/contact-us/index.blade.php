@@ -24,40 +24,38 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4 col-sm-12">
-                <div class="contact_about_seciton">
-                    <div class="section_title">
-                        <h4>WORK WITH US</h4>
-                        <h5>Tell us about your project</h5>
-                    </div>
-                    <div class="contact_discription">
-                        <p>Over the course of 11+ years, we have completed over 1000 projects with remarkable success. More than 1000 satisfied customers and renowned brands are in our list.
-                        Let us know about your project and leave the rest upon us. We assure you the most feasible, practical and innovative solution to your identified problem.</p>
-                    </div>
-                    <div class="contact_address_section">
-                        <div class="pg-contact-details">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="seciton_title">
-                                        <div class="small-title">
-                                            <h3>
-                                                Our branches
-                                            </h3>
+                @foreach ($contact as $val)
+                    <div class="contact_about_seciton">
+                        <div class="section_title">
+                            <h4>{{ $val->header1 }}</h4>
+                        </div>
+                        <div class="contact_discription">
+                            <p>{!! $val->detail !!}</p>
+                        </div>
+                        <div class="contact_address_section">
+                            <div class="pg-contact-details">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="seciton_title">
+                                            <div class="small-title">
+                                                <h3>{{ $val->header2 }}</h3>
+                                            </div>
+                                        </div>
+                                        <div class="contact_information">
+                                            <a href="tel:{{ $val->phone }}"> <span class="icon"> <i class="fa fa-phone"></i></span> <span class="title"> Phone Number :</span> <span class="value">{{ $val->phone }}</span></a>
+                                            <a href="mailto:{{ $val->email }}"> <span class="icon"> <i class="fa fa-envelope-o"></i></span> <span class="title"> Email :</span> <span class="value">{{ $val->email }}</span></a>
                                         </div>
                                     </div>
-                                    <div class="contact_information">
-                                        <a href="tel:+880 1622233333"> <span class="icon"> <i class="fa fa-phone"></i></span> <span class="title"> Phone Number :</span> <span class="value">+880 1622233333</span></a>
-                                        <a href="mailto://info@seemove.com.bd"> <span class="icon"> <i class="fa fa-envelope-o"></i></span> <span class="title"> Email :</span> <span class="value">info@seemove.com.bd</span></a>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="section_discription">
+                                    <div class="col-md-12">
+                                        <div class="section_discription">
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
 
             <div class="col-md-8 col-sm-12">
@@ -67,125 +65,22 @@
                     </div>
                     <div class="contact_waise_service_items">
                         <div class="row">
+                            @foreach ($service as $val)
                             <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
                                 <label class="full-width radio-label">
                                     <input  onclick="selectService('Vehicle service center software')" type="radio" id="radio1" class="radio_name"  >
                                         <div class="contact_waise_service_items_box">
                                             <div class="service_icon">
-                                                <i class="fa fa-code"></i>
+                                                <i class="{{ $val->icon }}"></i>
                                             </div>
                                             <div class="service_title">
-                                                <h4>GPS TRACKER</h4>
+                                                <h4>{{ $val->title }}</h4>
                                             </div>
                                         </div>
                                     </input>
                                 </label>
                             </div>
-
-                            <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                                <label class="full-width radio-label">
-                                    <input  onclick="selectService('Super shop e-Commerce')" type="radio" id="radio2" class="radio_name"  >
-                                        <div class="contact_waise_service_items_box">
-                                            <div class="service_icon">
-                                                <i class="fa fa-code"></i>
-                                            </div>
-                                            <div class="service_title">
-                                                <h4>GPS TRACKER</h4>
-                                            </div>
-                                        </div>
-                                    </input>
-                                </label>
-                            </div>
-
-                            <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                                <label class="full-width radio-label">
-                                    <input  onclick="selectService('Apartment Management Software')" type="radio" id="radio3" class="radio_name"  >
-                                        <div class="contact_waise_service_items_box">
-                                            <div class="service_icon">
-                                                <i class="fa fa-code"></i>
-                                            </div>
-                                            <div class="service_title">
-                                                <h4>GPS TRACKER</h4>
-                                            </div>
-                                        </div>
-                                    </input>
-                                </label>
-                            </div>
-
-                            <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                                <label class="full-width radio-label">
-                                    <input  onclick="selectService('Publication Management Software')" type="radio" id="radio4" class="radio_name"  >
-                                        <div class="contact_waise_service_items_box">
-                                            <div class="service_icon">
-                                                <i class="fa fa-code"></i>
-                                            </div>
-                                            <div class="service_title">
-                                                <h4>GPS TRACKER</h4>
-                                            </div>
-                                        </div>
-                                    </input>
-                                </label>
-                            </div>
-
-                            <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                                <label class="full-width radio-label">
-                                    <input  onclick="selectService('Interior Design Website')" type="radio" id="radio5" class="radio_name"  >
-                                        <div class="contact_waise_service_items_box">
-                                            <div class="service_icon">
-                                                <i class="fa fa-code"></i>
-                                            </div>
-                                            <div class="service_title">
-                                                <h4>GPS TRACKER</h4>
-                                            </div>
-                                        </div>
-                                    </input>
-                                </label>
-                            </div>
-
-                            <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                                <label class="full-width radio-label">
-                                    <input  onclick="selectService('e-Commerce Apps')" type="radio" id="radio6" class="radio_name"  >
-                                        <div class="contact_waise_service_items_box">
-                                            <div class="service_icon">
-                                                <i class="fa fa-code"></i>
-                                            </div>
-                                            <div class="service_title">
-                                                <h4>GPS TRACKER</h4>
-                                            </div>
-                                        </div>
-                                    </input>
-                                </label>
-                            </div>
-
-                            <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                                <label class="full-width radio-label">
-                                    <input  onclick="selectService('Restaurant e-Commerce')" type="radio" id="radio7" class="radio_name"  >
-                                        <div class="contact_waise_service_items_box">
-                                            <div class="service_icon">
-                                                <i class="fa fa-code"></i>
-                                            </div>
-                                            <div class="service_title">
-                                                <h4>GPS TRACKER</h4>
-                                            </div>
-                                        </div>
-                                    </input>
-                                </label>
-                            </div>
-
-                            <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                                <label class="full-width radio-label">
-                                    <input  onclick="selectService('Grocery e-Commerce')" type="radio" id="radio8" class="radio_name"  >
-                                        <div class="contact_waise_service_items_box">
-                                            <div class="service_icon">
-                                                <i class="fa fa-code"></i>
-                                            </div>
-                                            <div class="service_title">
-                                                <h4>GPS TRACKER</h4>
-                                            </div>
-                                        </div>
-                                    </input>
-                                </label>
-                            </div>                             
+                            @endforeach                            
                         </div>
                     </div>
                 </div>
