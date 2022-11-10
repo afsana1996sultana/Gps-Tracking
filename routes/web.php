@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admins\UserController;
 use App\Http\Controllers\Admins\NewsletterController;
+use App\Http\Controllers\Admins\MessageController;
 use App\Http\Controllers\Admins\StatusController;
 use App\Http\Controllers\Admins\QuicklinkController;
 use App\Http\Controllers\Admins\SociallinkController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\Admins\MenuController;
 use App\Http\Controllers\Admins\SubmenuController;
 use App\Http\Controllers\Admins\TelepartnerController;
 use App\Http\Controllers\Admins\ClientController;
+use App\Http\Controllers\Admins\TeamController;
 use App\Http\Controllers\Admins\ChoosensectionController;
 use App\Http\Controllers\Admins\AchievementController;
 use App\Http\Controllers\Admins\TestimonialController;
@@ -52,6 +54,10 @@ Route::get('home', [App\Http\Controllers\FrontendController::class, 'home'])->na
 
 ////////////////////Newsletter-Post/////////////////////////
 Route::post('newsletter_store',[NewsletterController::class,'store' ])->name('newsletter_store');
+
+
+////////////////////Message-Post/////////////////////////
+Route::post('message_store',[MessageController::class,'store' ])->name('message_store');
 
 
 ////////////////////About-Us/////////////////////////
@@ -148,6 +154,10 @@ Route::resource('about', App\Http\Controllers\Admins\AboutController::class);
 Route::resource('contact', App\Http\Controllers\Admins\ContactController::class);
 
 
+////////////////////Privacy-Policy/////////////////////////////////
+Route::resource('privacy', App\Http\Controllers\Admins\PrivacypolicyController::class);
+
+
 //////////////////////Quicklink/////////////////////////////////
 Route::resource('quick-link', App\Http\Controllers\Admins\QuicklinkController::class);
 Route::get('edit-quick-link/{id}', [QuicklinkController::class, 'edit']);
@@ -163,7 +173,7 @@ Route::delete('delete-social-link', [SociallinkController::class, 'destroy']);
 
 
 
-//////////////////////Telepartner/////////////////////////////////
+//////////////////////Our-Telepartner/////////////////////////////////
 Route::resource('tele-partner', App\Http\Controllers\Admins\TelepartnerController::class);
 Route::get('edit-tele-partner/{id}', [TelepartnerController::class, 'edit']);
 Route::put('tele-partner-update', [TelepartnerController::class, 'update']);
@@ -171,11 +181,18 @@ Route::delete('delete-tele-partner', [TelepartnerController::class, 'destroy']);
 
 
 
-//////////////////////Clients/////////////////////////////////
+//////////////////////Our-Clients/////////////////////////////////
 Route::resource('clients', App\Http\Controllers\Admins\ClientController::class);
 Route::get('edit-clients/{id}', [ClientController::class, 'edit']);
 Route::put('clients-update', [ClientController::class, 'update']);
 Route::delete('delete-clients', [ClientController::class, 'destroy']);
+
+
+// ////////////////////Our-Team/////////////////////////////////
+Route::resource('team', App\Http\Controllers\Admins\TeamController::class);
+Route::get('edit-team/{id}', [TeamController::class, 'edit']);
+Route::put('team-update', [TeamController::class, 'update']);
+Route::delete('delete-team', [TeamController::class, 'destroy']);
 
 
 //////////////////////Choosensection/////////////////////////////////
@@ -222,6 +239,12 @@ Route::resource('status', App\Http\Controllers\Admins\StatusController::class);
 Route::get('edit-status/{id}', [StatusController::class, 'edit']);
 Route::put('status-update', [StatusController::class, 'update']);
 Route::delete('delete-status', [StatusController::class, 'destroy']);
+
+
+////////////////////Message/////////////////////////
+Route::resource('message', App\Http\Controllers\Admins\MessageController::class);
+Route::get('show-message/{id}',[MessageController::class,'show' ]);
+Route::delete('delete-message',[MessageController::class,'destroy' ]);
 
 
 ////////////////////User/////////////////////////

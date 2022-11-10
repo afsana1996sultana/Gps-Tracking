@@ -46,11 +46,6 @@
                                             <a href="mailto:{{ $val->email }}"> <span class="icon"> <i class="fa fa-envelope-o"></i></span> <span class="title"> Email :</span> <span class="value">{{ $val->email }}</span></a>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="section_discription">
-
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -65,10 +60,11 @@
                     </div>
                     <div class="contact_waise_service_items">
                         <div class="row">
+                            <?php $counter = 1 ?>
                             @foreach ($service as $val)
                             <div class=" col-lg-3 col-md-3 col-sm-4 col-xs-6">
                                 <label class="full-width radio-label">
-                                    <input  onclick="selectService('Vehicle service center software')" type="radio" id="radio1" class="radio_name"  >
+                                    <input type="radio" id="radio{{$counter}}" class="radio_name"  >
                                         <div class="contact_waise_service_items_box">
                                             <div class="service_icon">
                                                 <i class="{{ $val->icon }}"></i>
@@ -80,6 +76,7 @@
                                     </input>
                                 </label>
                             </div>
+                            <?php $counter++ ?>
                             @endforeach                            
                         </div>
                     </div>
@@ -87,52 +84,44 @@
 
                 <div class="contact_form_seciton">
                     <div class="pg-contact-form">
-                        <form method="POST" action="#" accept-charset="UTF-8" id="contactMail">
-                        	<input name="_token" type="hidden" value="Hy9QERzs13BsnSCcHyVqh4sQ6V1zWq186eBwUlSS">
-	                        <input type="hidden" id="serviceSelectt" name="title"/>
-	                        <div class="row no-gutters">
-	                            <div class="col-lg-6 col-md-6">
-	                                <div class="single-input">
-	                                    <input name="fullname" type="text" placeholder="Your Name*">
-	                                </div>
-	                            </div>
-	                            <div class="col-lg-6 col-md-6">
-	                                <div class="single-input">
-	                                    <input type="email" name="email" id="contact_email" placeholder="Your E-mail*">
-	                                </div>
-	                            </div>
-	                            <div class="col-lg-6 col-md-6">
-	                                <div class="single-input">
-	                                    <input type="text" name="phone" placeholder="Phone">
-	                                </div>
-	                            </div>
-	                            <div class="col-lg-6 col-md-6">
-	                                <div class="single-input">
-	                                    <input type="text" name="subject" placeholder="Subject">
-	                                </div>
-	                            </div>
-	                            <div class="col-lg-12">
-	                                <div class="single-input">
-	                                    <textarea name="message" id="contact_message" cols="10" rows="4"
-	                                        placeholder="Your message"></textarea>
-	                                </div>
-	                            </div>
-	                            <div class="col-lg-12">
-	                                <div class="single-input form-group">
-	                                    <script src="www.google.com/recaptcha/apifef7fef7.html?hl=en" async defer></script>
-	                                    <div class="g-recaptcha" theme="light" id="buzzNoCaptchaId_e059b2b5a49624c476973c767c4572b0" data-sitekey="6LfwZMcUAAAAAE3l6C3pPXYIkjaM1ryIL4Bg8zL7"></div>
-	                                </div>
-	                            </div>
+                        <div class="row no-gutters">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single-input">
+                                    <input type="text" name="txtName" id="txtName" placeholder="Your Name*">
+                                </div>
+                            </div>
 
-	                            <div class="col-lg-12">
-	                                <div class="single-input">
-	                                    <button class="btn" type="submit">
-	                                        <span>Send Now</span>
-	                                    </button>
-	                                </div>
-	                            </div>
-	                        </div>
-                        </form>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single-input">
+                                    <input type="email" name="txtEmail" id="txtEmail" placeholder="Your E-mail*">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single-input">
+                                    <input type="text" name="txtPhone" id="txtPhone" placeholder="Phone">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single-input">
+                                    <input type="text" name="txtSubject" id="txtSubject" placeholder="Subject">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="single-input">
+                                    <textarea name="txtMessage" id="txtMessage" cols="10" rows="4"
+                                        placeholder="Your message"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="single-input">
+                                    <button id="snd_msg" class="btn"> <span>Send Now</span></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -150,4 +139,57 @@
         </div>
     </div>
 </section>
+@section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+var serv_arr = [];
+$('.radio_name').on('click', function(){
+    var clicked_id = $(this).attr('id');
+    var parent_class = (($('#'+clicked_id).parent())[0]).className;
+    var idx_chk = parent_class.indexOf('checked');
+    if(idx_chk != -1){
+        $(this).parent().removeClass('checked');
+    }else{
+        $(this).parent().addClass('checked');
+    }
+    var child_select = (($(this).next().find(">:last-child")).text()).trim();
+    serv_arr.push(child_select);
+    console.log(serv_arr);
+    
+});
+$('#snd_msg').on('click',function(){
+    $.ajax({
+    headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    url: "message_store",       
+    type: "POST",
+    data: {
+        name: $('#txtName').val(),
+        email: $('#txtEmail').val(),
+        phone: $('#txtPhone').val(),
+        subject: $('#txtSubject').val(),
+        msg: $('#txtMessage').val(),
+        services: serv_arr.toString()
+    },
+    success: function( response ) {
+      $('#txtName').val('');
+      $('#txtEmail').val('');
+      $('#txtPhone').val('');
+      $('#txtSubject').val(''),
+      $('#txtMessage').val('');
+      
+      $('.radio-label').each(function(){
+        var cls = ($(this).attr('class')).trim();
+        if(cls.indexOf('checked') != -1){
+            $(this).removeClass('checked')
+        }
+      });
+
+      alert('Your Message has been submitted successfully');
+    }
+   });
+});    
+</script>
+@endsection
 @endsection

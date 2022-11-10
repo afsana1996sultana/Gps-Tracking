@@ -1,5 +1,4 @@
 <header class="header header-style-3 megamenu-container bg-white sticky-header bg-white fixed-header" style="margin-bottom: -5px;">
-   <!-- Header Area Start -->
    <!-- Header Bottom Area -->
    <div class="header-bottom-area">
       <div class="container-fluid">
@@ -65,11 +64,6 @@
                            <a class="nav-link" href="{{url('/contact-us')}}">Contact Us</a>
                            <ul class="dropdown-menu sub-menu-items"></ul>
                         </li>
-
-                        <li class="nav-item dropdown">
-                           <a class="nav-link" href="{{url('/pay')}}">Pay</a>
-                           <ul class="dropdown-menu sub-menu-items"></ul>
-                        </li>
                      </ul>
                   </div>
 
@@ -133,10 +127,6 @@
 
             <li>
                <a href="{{url('/contact-us')}}">Contact Us</a>
-            </li>
-
-            <li>
-               <a href="{{url('/pay')}}">Pay</a>
             </li>
          </ul>
       </div>
