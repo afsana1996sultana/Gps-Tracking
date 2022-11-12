@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admins\UserController;
 use App\Http\Controllers\Admins\NewsletterController;
 use App\Http\Controllers\Admins\MessageController;
+use App\Http\Controllers\Admins\OrderController;
 use App\Http\Controllers\Admins\StatusController;
 use App\Http\Controllers\Admins\QuicklinkController;
 use App\Http\Controllers\Admins\SociallinkController;
@@ -18,6 +19,7 @@ use App\Http\Controllers\Admins\AchievementController;
 use App\Http\Controllers\Admins\TestimonialController;
 use App\Http\Controllers\Admins\CartrakerController;
 use App\Http\Controllers\Admins\ServiceController;
+use App\Http\Controllers\Admins\AddpricingController;
 use App\Http\Controllers\Frontend\AboutusController;
 use App\Http\Controllers\Frontend\OurserviceController;
 use App\Http\Controllers\Frontend\OurclientController;
@@ -58,6 +60,10 @@ Route::post('newsletter_store',[NewsletterController::class,'store' ])->name('ne
 
 ////////////////////Message-Post/////////////////////////
 Route::post('message_store',[MessageController::class,'store' ])->name('message_store');
+
+
+////////////////////Order/////////////////////////
+Route::post('order_store',[OrderController::class,'store' ])->name('order_store');
 
 
 ////////////////////About-Us/////////////////////////
@@ -158,6 +164,15 @@ Route::resource('contact', App\Http\Controllers\Admins\ContactController::class)
 Route::resource('privacy', App\Http\Controllers\Admins\PrivacypolicyController::class);
 
 
+////////////////////Terms-Condition/////////////////////////////////
+Route::resource('terms-conditions', App\Http\Controllers\Admins\TermsconditionController::class);
+
+
+///////////////////////Add-Pricing/////////////////////////////////
+Route::resource('add-pricing', App\Http\Controllers\Admins\AddpricingController::class);
+Route::delete('delete-add-pricing', [AddpricingController::class, 'destroy']);
+
+
 //////////////////////Quicklink/////////////////////////////////
 Route::resource('quick-link', App\Http\Controllers\Admins\QuicklinkController::class);
 Route::get('edit-quick-link/{id}', [QuicklinkController::class, 'edit']);
@@ -245,6 +260,12 @@ Route::delete('delete-status', [StatusController::class, 'destroy']);
 Route::resource('message', App\Http\Controllers\Admins\MessageController::class);
 Route::get('show-message/{id}',[MessageController::class,'show' ]);
 Route::delete('delete-message',[MessageController::class,'destroy' ]);
+
+
+////////////////////Order/////////////////////////
+Route::resource('order', App\Http\Controllers\Admins\OrderController::class);
+Route::get('show-order/{id}',[OrderController::class,'show' ]);
+Route::delete('delete-order',[OrderController::class,'destroy' ]);
 
 
 ////////////////////User/////////////////////////

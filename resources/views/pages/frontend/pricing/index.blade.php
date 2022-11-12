@@ -45,106 +45,40 @@
                     <h3>Our Package List</h3>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-4">
-                <div class="ab-single-organic-package">
-                    <div class="ab-single-organic-head p-padding0 text-center">
-                        <h3>BASIC</h3>
-                        <h1>BDT 3500 /MONTH</h1>
-                        <p> Yearly Renew Fee BDT 3,000 </p>
-                    </div>
-                    <div class="organic-phage-content text-center">
-                        <h4 class="phage-title"></h4>
-                        <p> Responsive Design </p>
-                        <p> Basic Information Pages </p>
-                        <p> Contact Form </p>
-                        <p> Fast loading </p>
-                        <p> Social media integration </p>
-                        <p> Easy to Update </p>
-                        <p> Slider: 5 Sliders </p>
-                        <p> Pages: Unlimited </p>
-                        <p> Design: 2 Sample Design </p>
-                        <p> Affordable to improve </p>
-                        <p> Security Features </p>
-                    </div>
-                    <div class="organic-phage-content text-center">
-                        <h4 class="phage-title">GPS Traker </h4>
-                    </div>
-                    <div class="pkg-button ab-organic-btn text-center">
-                        <button type="button" value="247" class="loginFromOpenBtn doddle-btn fill">
-                            <span></span>
-                            <b></b>Order Now 
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-4">
-                <div class="ab-single-organic-package ab-single-organic-package-second">
-                    <div class="ab-single-organic-head p-padding0 text-center">
-                        <h3>STANDARD</h3>
-                        <h1>BDT 4500 /MONTH</h1>
-                        <!-- <h1>$50000</h1> -->
-                        <p>Yearly Renew Fee BDT 4,000 </p>
-                    </div>
-                    <div class="organic-phage-content text-center">
-                        <h4 class="phage-title"></h4>
-                        <p> Responsive Design </p>
-                        <p> Basic Information Pages </p>
-                        <p> Contact Form </p>
-                        <p> Fast loading </p>
-                        <p> Social media integration </p>
-                        <p> Easy to Update </p>
-                        <p> Slider: 8 Sliders </p>
-                        <p> Pages: Unlimited </p>
-                        <p> Design: 3 Sample Design </p>
-                        <p> Affordable to improve </p>
-                        <p> Security Features </p>
-                    </div>
-                    <div class="organic-phage-content text-center">
-                        <h4 class="phage-title">GPS Traker</h4>
-                    </div>
-                    <div class="pkg-button ab-organic-btn text-center">
-                        <button type="button" value="248" class="loginFromOpenBtn doddle-btn fill">
-                            <span></span>
-                            <b></b>Order Now 
-                        </button>
+            @foreach ($addpricing as $val)
+                <div class="col-lg-4 col-sm-4">
+                    <div class="ab-single-organic-package">
+                        <div class="ab-single-organic-head p-padding0 text-center">
+                            <h3> {{ $val->title}} </h3>
+                            <h1> {{ $val->price}} </h1>
+                            <p> {{ $val->renew}} </p>
+                        </div>
+                        <div class="organic-phage-content text-center">
+                            <h4 class="phage-title"></h4>
+                            <p> {{ $val->design}} </p>
+                            <p> {{ $val->information}} </p>
+                            <p> {{ $val->form}} </p>
+                            <p> {{ $val->loading}} </p>
+                            <p> {{ $val->media}} </p>
+                            <p> {{ $val->update}} </p>
+                            <p> {{ $val->slider}} </p>
+                            <p> {{ $val->page}} </p>
+                            <p> {{ $val->sample}} </p>
+                            <p> {{ $val->affordable}} </p>
+                            <p> {{ $val->security}} </p>
+                        </div>
+                        <div class="organic-phage-content text-center">
+                            <h4 class="phage-title">GPS Traker </h4>
+                        </div>
+                        <div class="pkg-button ab-organic-btn text-center">
+                            <button type="button" value="247" class="loginFromOpenBtn doddle-btn fill">
+                                <span></span>
+                                <b></b>Order Now 
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-4">
-                <div class="ab-single-organic-package ab-single-organic-package-third">
-                    <div class="ab-single-organic-head p-padding0 text-center">
-                        <h3>ADVANCED</h3>
-                        <h1>BDT 5900 /MONTH</h1>
-                        <p>Yearly Renew Fee BDT 5,000</p>
-                    </div>
-                    <div class="organic-phage-content text-center">
-                        <h4 class="phage-title"></h4>
-                        <p> Responsive Design </p>
-                        <p> Basic Information Pages </p>
-                        <p> Contact Form </p>
-                        <p> Fast loading </p>
-                        <p> Social media integration </p>
-                        <p> Easy to Update </p>
-                        <p> Slider: 12 Sliders </p>
-                        <p> Pages: Unlimited </p>
-                        <p> Design: 5 Sample Design </p>
-                        <p> Affordable to improve </p>
-                        <p> Security Features </p>
-                    </div>
-                    <div class="organic-phage-content text-center">
-                        <h4 class="phage-title">GPS Traker</h4>
-                    </div>
-                    <div class="pkg-button ab-organic-btn text-center">
-                        <button type="button" value="249" class="loginFromOpenBtn doddle-btn fill">
-                            <span></span>
-                            <b></b>Order Now 
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
+            @endforeach
         </div>
     </div>
 </div>
