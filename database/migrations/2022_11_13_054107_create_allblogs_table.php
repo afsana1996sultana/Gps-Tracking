@@ -13,15 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('allblogs', function (Blueprint $table) {
             $table->bigIncrements('id')->primary;
-            $table->string('title');
-            $table->string('price');
-            $table->string('renew');
+            $table->string('user_id');
             $table->string('name');
-            $table->string('email');
-            $table->string('phone');
-            $table->longText('address');
+            $table->string('title');
+            $table->string('slug');
+            $table->longText('description');
+            $table->dateTime('published_date');
+            $table->string('blog_img');
+            $table->string('banner_img');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('allblogs');
     }
 };

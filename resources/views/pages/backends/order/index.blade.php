@@ -72,14 +72,43 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="form-group mb-5">
-							<label class="col-form-label">Title:&nbsp;</label>
+							<label class="col-form-label">Name:&nbsp;</label>
+							<div class="" id="ShName"></div>
+						</div>
+					</div>
+
+					<div class="col-sm-6">
+						<div class="form-group mb-5">
+							<label class="col-form-label">Email:&nbsp;</label>
+							<div class="" id="ShEmail"></div>
+						</div>
+					</div>
+
+					<div class="col-sm-6">
+						<div class="form-group mb-5">
+							<label class="col-form-label">Phone No:&nbsp;</label>
+							<div class="" id="ShPhone"></div>
+						</div>
+					</div>
+
+
+					<div class="col-sm-6">
+						<div class="form-group mb-5">
+							<label class="col-form-label">Address:&nbsp;</label>
+							<div class="" id="ShAddress"></div>
+						</div>
+					</div>
+
+					<div class="col-sm-6">
+						<div class="form-group mb-5">
+							<label class="col-form-label">Package Name:&nbsp;</label>
 							<div class="" id="ShTitle"></div>
 						</div>
 					</div>
 
                     <div class="col-sm-6">
 						<div class="form-group mb-5">
-							<label class="col-form-label">Price:&nbsp;</label>
+							<label class="col-form-label">Package Price:&nbsp;</label>
 							<div class="" id="ShPrice"></div>
 						</div>
 					</div>
@@ -154,9 +183,13 @@
 				success:function(response){
 					console.log(response);
 					$('#cmbOrderSHId').html(ordersh_id);
-					$('#ShTitle').html(response.order.name);
-					$('#ShPrice').html(response.order.email);
-					$('#ShRenew').html(response.order.phone);
+					$('#ShName').html(response.order.name);
+					$('#ShEmail').html(response.order.email);
+					$('#ShPhone').html(response.order.phone);
+					$('#ShAddress').html(response.order.address);
+					$('#ShTitle').html(response.order.title);
+					$('#ShPrice').html(response.order.price);
+					$('#ShRenew').html(response.order.renew);
 
 				}
 			});

@@ -198,8 +198,6 @@
 	</div>
 </div>
 <!-- /Delete Car-Trakers Modal -->
-
-
 @section('js')
 <script src="{{url('backends/assets/modules/datatables/datatables.min.js')}}"></script>
 <script src="{{url('backends/assets/modules/datatables/dataTables.bootstrap4.min.js')}}"></script>

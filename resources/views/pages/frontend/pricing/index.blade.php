@@ -45,39 +45,47 @@
                     <h3>Our Package List</h3>
                 </div>
             </div>
+            <?php $counter = 1 ?>
             @foreach ($addpricing as $val)
-                <div class="col-lg-4 col-sm-4">
+                <div class="col-lg-3 col-sm-3">
                     <div class="ab-single-organic-package">
                         <div class="ab-single-organic-head p-padding0 text-center">
-                            <h3> {{ $val->title}} </h3>
-                            <h1> {{ $val->price}} </h1>
-                            <p> {{ $val->renew}} </p>
+                            <a id="ord_title_{{$counter}}"><h3> {{ $val->title}} </h3></a>
+                            <a id="ord_price_{{$counter}}"><h1>৳ {{ $val->price}} </h1></a>
+                            <a id="ord_renew_{{$counter}}"><p> {{ $val->renew}} </p></a>               
                         </div>
                         <div class="organic-phage-content text-center">
                             <h4 class="phage-title"></h4>
-                            <p> {{ $val->design}} </p>
-                            <p> {{ $val->information}} </p>
-                            <p> {{ $val->form}} </p>
-                            <p> {{ $val->loading}} </p>
-                            <p> {{ $val->media}} </p>
-                            <p> {{ $val->update}} </p>
-                            <p> {{ $val->slider}} </p>
-                            <p> {{ $val->page}} </p>
-                            <p> {{ $val->sample}} </p>
-                            <p> {{ $val->affordable}} </p>
-                            <p> {{ $val->security}} </p>
+                            <p> {{ $val->service1}} </p>
+                            <p> {{ $val->service2}} </p>
+                            <p> {{ $val->service3}} </p>
+                            <p> {{ $val->service4}} </p>
+                            <p> {{ $val->service5}} </p>
+                            <p> {{ $val->service6}} </p>
+                            <p> {{ $val->service7}} </p>
+                            <p> {{ $val->service8}} </p>
+                            <p> {{ $val->service9}} </p>
+                            <p> {{ $val->service10}} </p>
+                            <p> {{ $val->service11}} </p>
+                            <p> {{ $val->service12}} </p>
+                            <p> {{ $val->service13}} </p>
+                            <p> {{ $val->service14}} </p>
+                            <p> {{ $val->service15}} </p>
+                            <p> {{ $val->service16}} </p>
+                            <p> {{ $val->service17}} </p>
                         </div>
                         <div class="organic-phage-content text-center">
                             <h4 class="phage-title">GPS Traker </h4>
                         </div>
                         <div class="pkg-button ab-organic-btn text-center">
-                            <button type="button" value="247" class="loginFromOpenBtn doddle-btn fill">
+                            <button id="snd_order_{{$counter}}" value="247" class="loginFromOpenBtn doddle-btn fill order_btn">
                                 <span></span>
                                 <b></b>Order Now 
                             </button>
                         </div>
                     </div>
                 </div>
+            <?php $counter++ ?>
             @endforeach
         </div>
     </div>
@@ -139,4 +147,111 @@
         </div>
     </div>
 </div>
+
+<div id="loginModal" class="modal fade loginModalOpen" tabindex="-1" data-focus-on="input:first">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"></h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="commom-form login-form-new">
+                    <div class="login-form-new-inner">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="section-title">
+                                    <h2>Packege Information</h2>
+                                </div>
+
+                                <div class="form-input">
+                                    <label>Packge Name <span>*</span></label>
+                                    <input name="text" name="txtTitle" class="form-control" value="">
+                                </div>
+
+                                <div class="form-input">
+                                    <label>Packge Price <span>*</span></label>
+                                    <input name="text" name="txtPrice" class="form-control" value="">
+                                </div>
+
+                                <div class="form-input">
+                                    <label>Renew <span>*</span></label>
+                                    <input name="text" name="txtRenew" class="form-control" value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="section-title">
+                                    <h2>Order Information</h2>
+                                </div>
+
+                                <div class="form-input">
+                                    <label>Name <span>*</span></label>
+                                    <input name="text" id="txtName" name="txtName" class="form-control">
+                                </div>
+
+                                <div class="form-input">
+                                    <label>Email <span>*</span></label>
+                                    <input name="email" id="txtEmail" name="txtEmail" class="form-control">
+                                </div>
+
+                                <div class="form-input">
+                                    <label>Phone <span>*</span></label>
+                                    <input name="text" id="txtPhone" name="txtPhone" class="form-control">
+                                </div>
+
+                                <div class="form-input">
+                                    <label>Address</label>
+                                    <textarea name="txtAddress"class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button id="snd_order_{{$counter}}" class="btn btn-info" data-dismiss="modal">Order</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $('.order_btn').on('click', function(){
+    var clicked_id_number = ($(this).attr('id').slice(10));
+    var title_id = "ord_title_"+clicked_id_number;
+    var title_val = $('#'+title_id).text();
+    var price_id = "ord_price_"+clicked_id_number;
+    var price_val = $('#'+price_id).text();
+    var renew_id = "ord_renew_"+clicked_id_number;
+    var renew_val = $('#'+renew_id).text();
+    // console.log(clicked_id_number+" "+title_val+" "+price_val+" "+renew_val);
+    $.ajax({
+    headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    url: "order_store",       
+    type: "POST",
+    data: {
+        title: title_val,
+        price: price_val,
+        renew: renew_val,
+    },
+    success: function( response ) {
+        alert('Your Order has been submitted successfully');
+    }
+   });
+}); 
+
+$(document).ready(function() {
+    $(".loginFromOpenBtn").click(function() {
+        $(".loginModalOpen").modal();
+    });
+});
+</script>
+@endsection
 @endsection

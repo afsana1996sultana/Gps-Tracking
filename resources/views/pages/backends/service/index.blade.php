@@ -78,7 +78,7 @@
                         <div class="form-group col-12">
                             <label>Service Image Preview</label>
                             <div>
-                                <img id="preview-img" class="admin-img" src="{{url('backends/assets/image/av.jpg')}}" alt="" height="100px" width="100px">
+                                <img id="preview-img" class="admin-img" src="{{url('backends/assets/image/preview.png')}}" alt="" height="150px" width="200px">
                             </div>
                         </div>
 

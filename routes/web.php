@@ -20,6 +20,7 @@ use App\Http\Controllers\Admins\TestimonialController;
 use App\Http\Controllers\Admins\CartrakerController;
 use App\Http\Controllers\Admins\ServiceController;
 use App\Http\Controllers\Admins\AddpricingController;
+use App\Http\Controllers\Admins\AllblogController;
 use App\Http\Controllers\Frontend\AboutusController;
 use App\Http\Controllers\Frontend\OurserviceController;
 use App\Http\Controllers\Frontend\OurclientController;
@@ -168,9 +169,18 @@ Route::resource('privacy', App\Http\Controllers\Admins\PrivacypolicyController::
 Route::resource('terms-conditions', App\Http\Controllers\Admins\TermsconditionController::class);
 
 
+////////////////////Profile/////////////////////////////////
+Route::resource('user-profile', App\Http\Controllers\Admins\ProfileController::class);
+
+
 ///////////////////////Add-Pricing/////////////////////////////////
 Route::resource('add-pricing', App\Http\Controllers\Admins\AddpricingController::class);
 Route::delete('delete-add-pricing', [AddpricingController::class, 'destroy']);
+
+
+///////////////////////Blog/////////////////////////////////
+Route::resource('blog-list', App\Http\Controllers\Admins\AllblogController::class);
+Route::delete('delete-blog-list', [AllblogController::class, 'destroy']);
 
 
 //////////////////////Quicklink/////////////////////////////////

@@ -18,10 +18,13 @@ class OrderController extends Controller
 
     public function store(Request $request){
         $order = new Order; 
+        $order->name=$request->name;
+        $order->email=$request->email;
+        $order->phone=$request->phone;
+        $order->address=$request->address;
         $order->title=$request->title;
         $order->price=$request->price;
         $order->renew=$request->renew;
-
         $order->save();
         //return $request;
         return back()->with('your Order has been Submitted successfully!');

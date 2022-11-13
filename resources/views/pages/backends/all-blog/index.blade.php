@@ -7,16 +7,16 @@
 <div class="main-content">
 	<section class="section">
 		<div class="section-header">
-			<h1>Add Pricing</h1>
+			<h1>All Blogs</h1>
             <div class="section-header-breadcrumb">
               <div class="breadcrumb-item active"><a href="{{url('/dashboard')}}">Dashboard</a></div>
-              <div class="breadcrumb-item">Add Pricing</div>
+              <div class="breadcrumb-item">All Blogs</div>
             </div>
 		</div>
     </section>
 
 	<div class="section-body">
-    <a href="{{ route('add-pricing.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Add New</a> 
+    <a href="{{ route('blog-list.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Add New</a> 
 		<div class="row mt-4">
 			<div class="col">
 				<div class="card">
@@ -26,23 +26,23 @@
 								<thead>
 									<tr>
                                         <th class="sorting sorting_asc">SN</th>
+                                        <th class="sorting">Name</th>
+                                        <th class="sorting">Image</th>
                                         <th class="sorting">Title</th>
-                                        <th class="sorting">Price</th>
-                                        <th class="sorting">Renew</th>
                                         <th class="sorting">Action</th>
 									</tr>
 								</thead>
 								<tbody> 
-									@forelse ($pricing as $pricing)
+									@forelse ($blog as $blog)
 									<tr class="odd">
-                                        <td>{{$pricing-> id}}</td>
-                                        <td>{{$pricing-> title}}</td>
-                                        <td>৳ {{$pricing-> price}}</td>
-                                        <td>{{$pricing-> renew}}</td>
+                                        <td>{{$blog-> id}}</td>
+                                        <td>{{$blog-> name}}</td>
+                                        <td><img src="{{asset('img/'.$blog->blog_img)}}" height="90px" width="90px" alt=""></td>
+                                        <td>{{$blog-> title}}</td>
 										<td class="text-right py-0 align-middle">
 											<div class="btn-group btn-group-sm">
-                                                <a href="{{url('add-pricing/'.$pricing->id.'/edit')}}" class="btn btn-primary"><i class="fas fa-edit" ></i></a>&nbsp;
-												<button type="button" value="{{$pricing->id}}" class="btn btn-danger" id="pricingDbtn" ><i class="fas fa-trash"></i> </button>
+                                                <a href="{{url('blog-list/'.$blog->id.'/edit')}}" class="btn btn-primary"><i class="fas fa-edit" ></i></a>&nbsp;
+												<button type="button" value="{{$blog->id}}" class="btn btn-danger" id="blogDbtn" ><i class="fas fa-trash"></i> </button>
 											</div>
 										</td>   
 									</tr>
@@ -58,22 +58,22 @@
 		</div>
 	</div>
 </div>
-<!-- Delete Pricing Modal -->
-<div class="modal custom-modal fade" id="delete_pricing" role="dialog">
+<!-- Delete Blog Modal -->
+<div class="modal custom-modal fade" id="delete_blog" role="dialog">
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-body">
 				<div class="form-header" style="text-align:center;">
-					<h3>Delete Price</h3>
+					<h3>Delete Blog</h3>
 					<p>Are you sure want to delete?</p>
 				</div>
 				<div class="modal-btn delete-action">
 					<div class="row float-right">
 						<div class="col-6">
-							<form action="{{url('delete-add-pricing')}}" method="post" >
+							<form action="{{url('delete-blog-list')}}" method="post" >
 								@csrf
 								@method("DELETE")
-                                <input type="hidden" id="delete_pricingId" name="d_pricing">
+                                <input type="hidden" id="delete_blogId" name="d_blog">
                                 <button type="submit" class="btn btn-danger continue-btn">Delete</button>		
 							</form>
 						</div>
@@ -86,18 +86,18 @@
 		</div>
 	</div>
 </div>
-<!-- /Delete Pricing Modal -->
+<!-- /Delete Blog Modal -->
 @section('js')
 <script src="{{url('backends/assets/modules/datatables/datatables.min.js')}}"></script>
 <script src="{{url('backends/assets/modules/datatables/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{url('backends/assets/modules/datatables/dataTables.select.min.js')}}"></script>
 <script>
     $(document).ready(function(){
-        $(document).on('click','#pricingDbtn',function(){
+        $(document).on('click','#blogDbtn',function(){
         // alart("ok");
-            var pricing_id=$(this).val();
-            $('#delete_pricing').modal('show');
-            $('#delete_pricingId').val(pricing_id);
+            var blog_id=$(this).val();
+            $('#delete_blog').modal('show');
+            $('#delete_blogId').val(blog_id);
         });
     
 	});
