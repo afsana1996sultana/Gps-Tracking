@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <div class="footer-top-area footer_top_area_bg_img" style="background-image: url('/frontend/image/footer-1.webp');">
+    <div class="footer-top-area footer_top_area_bg_img" style="background-image: url('/frontend/image/btrc.webp');">
         <div class="footer_area_bg_overlay">
             <div class="container-fluid">
                 <div class="footer-widgets widgets">

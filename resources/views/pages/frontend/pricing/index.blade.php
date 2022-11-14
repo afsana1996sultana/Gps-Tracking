@@ -168,17 +168,17 @@
 
                                 <div class="form-input">
                                     <label>Packge Name <span>*</span></label>
-                                    <input name="text" name="txtTitle" class="form-control" value="">
+                                    <input name="text" id="txtTitle" name="txtTitle" class="form-control" disabled>
                                 </div>
 
                                 <div class="form-input">
                                     <label>Packge Price <span>*</span></label>
-                                    <input name="text" name="txtPrice" class="form-control" value="">
+                                    <input name="text" id="txtPrice" name="txtPrice" class="form-control" disabled>
                                 </div>
 
                                 <div class="form-input">
                                     <label>Renew <span>*</span></label>
-                                    <input name="text" name="txtRenew" class="form-control" value="">
+                                    <input name="text" id="txtRenew" name="txtRenew" class="form-control" disabled>
                                 </div>
                             </div>
 
@@ -204,7 +204,7 @@
 
                                 <div class="form-input">
                                     <label>Address</label>
-                                    <textarea name="txtAddress"class="form-control"></textarea>
+                                    <textarea id="txtAddress" name="txtAddress" class="form-control"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -213,7 +213,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button id="snd_order_{{$counter}}" class="btn btn-info" data-dismiss="modal">Order</button>
+                <button id="snd_order" class="btn btn-info" data-dismiss="modal">Order Submit</button>
             </div>
         </div>
     </div>
@@ -221,15 +221,30 @@
 @section('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
+
+    var clicked_id_number = "";
+    var title_id = "";
+    var title_val = "";
+    var price_id = "";
+    var price_val = "";
+    var renew_id = "";
+    var renew_val = "";
+
+
     $('.order_btn').on('click', function(){
-    var clicked_id_number = ($(this).attr('id').slice(10));
-    var title_id = "ord_title_"+clicked_id_number;
-    var title_val = $('#'+title_id).text();
-    var price_id = "ord_price_"+clicked_id_number;
-    var price_val = $('#'+price_id).text();
-    var renew_id = "ord_renew_"+clicked_id_number;
-    var renew_val = $('#'+renew_id).text();
+     clicked_id_number = ($(this).attr('id').slice(10));
+     title_id = "ord_title_"+clicked_id_number;
+     title_val = $('#'+title_id).text();
+     price_id = "ord_price_"+clicked_id_number;
+     price_val = $('#'+price_id).text();
+     renew_id = "ord_renew_"+clicked_id_number;
+     renew_val = $('#'+renew_id).text();
+    $('#txtTitle').val(title_val);
+    $('#txtPrice').val(price_val);
+    $('#txtRenew').val(renew_val);
     // console.log(clicked_id_number+" "+title_val+" "+price_val+" "+renew_val);
+}); 
+$('#snd_order').on('click', function(){
     $.ajax({
     headers: {
     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -240,12 +255,20 @@
         title: title_val,
         price: price_val,
         renew: renew_val,
+        name: $('#txtName').val(),
+        email: $('#txtEmail').val(),
+        phone: $('#txtPhone').val(),
+        address: $('#txtAddress').val()
     },
     success: function( response ) {
+        $('#txtName').val("");
+        $('#txtEmail').val("");
+        $('#txtPhone').val("");
+        $('#txtAddress').val("");
         alert('Your Order has been submitted successfully');
     }
    });
-}); 
+});
 
 $(document).ready(function() {
     $(".loginFromOpenBtn").click(function() {

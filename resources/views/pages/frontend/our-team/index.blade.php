@@ -34,7 +34,7 @@
         <div class="row team-wrap">
             <!-- Single Team -->
             @foreach ($team as $val)
-                <div class="col-lg-2 col-md-3 col-sm-12 col-12">
+                <div class="col-lg-3 col-md-4 col-sm-12 col-12">
                     <div class="single-team single-team-style-2">
                         <div class="team-thumb">
                             <a href="">

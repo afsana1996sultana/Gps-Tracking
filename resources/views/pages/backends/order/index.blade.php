@@ -26,9 +26,10 @@
 								<thead>
 									<tr>
 										<th class="sorting sorting_asc">SN</th>
-										<th class="sorting">Title</th>
-										<th class="sorting">Price</th>
-										<th class="sorting">Renew</th>
+										<th class="sorting">Name</th>
+										<th class="sorting">Phone</th>
+										<th class="sorting">Address</th>
+										<th class="sorting">Packege Name</th>
 										<th class="sorting">Action</th>
 									</tr>
 								</thead>
@@ -36,9 +37,10 @@
 									@forelse ($order as $order)
 									<tr class="odd">
 										<td>{{$order-> id}}</td>
+										<td>{{$order-> name}}</td>
+										<td>{{$order-> phone}}</td>
+										<td>{{$order-> address}}</td>
 										<td>{{$order-> title}}</td>
-										<td>{{$order-> price}}</td>
-										<td>{{$order-> renew}}</td>
 										<td class="text-right py-0 align-middle">
 											<div class="btn-group btn-group-sm">
                                                 <button type="button" value="{{$order->id}}" class="btn btn-info" id="ordershBtn" ><i class="fas fa-eye" ></i> </button>&nbsp;
